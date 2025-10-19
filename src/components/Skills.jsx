@@ -64,7 +64,7 @@ const Skills = () => {
   }
 
   return (
-    <section id="skills" className="py-20 px-4 bg-background-primary">
+    <section id="skills" className="py-12 md:py-20 px-4 bg-background-primary">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
@@ -78,12 +78,12 @@ const Skills = () => {
 
           <motion.div
             variants={itemVariants}
-            className="text-center mb-12"
+            className="text-center mb-8 md:mb-12 px-4"
           >
-            <p className="text-xl text-text-primary font-semibold mb-4">
+            <p className="text-base sm:text-lg md:text-xl text-text-primary font-semibold mb-3 md:mb-4">
               PASSIONATE DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK
             </p>
-            <p className="text-lg text-text-secondary">
+            <p className="text-sm sm:text-base md:text-lg text-text-secondary">
               Currently learning Full-Stack Development | 35+ Certifications Completed
             </p>
           </motion.div>
@@ -91,12 +91,12 @@ const Skills = () => {
           {/* Tech Stack Icons */}
           <motion.div
             variants={itemVariants}
-            className="mb-16"
+            className="mb-12 md:mb-16"
           >
-            <h3 className="text-2xl font-bold text-text-primary text-center mb-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-text-primary text-center mb-6 md:mb-8">
               Technologies I Work With
             </h3>
-            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 sm:gap-6">
               {techStack.map((tech, index) => (
                 <motion.div
                   key={tech.name}
@@ -108,14 +108,14 @@ const Skills = () => {
                   }}
                   className="flex flex-col items-center group"
                 >
-                  <div className="w-16 h-16 bg-background-secondary border border-background-tertiary rounded-lg flex items-center justify-center mb-3 group-hover:border-text-accent transition-all duration-300 group-hover:shadow-glow">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-background-secondary border border-background-tertiary rounded-lg flex items-center justify-center mb-2 sm:mb-3 group-hover:border-text-accent transition-all duration-300 group-hover:shadow-glow">
                     <img 
                       src={tech.icon} 
                       alt={tech.name}
-                      className="w-10 h-10"
+                      className="w-8 h-8 sm:w-10 sm:h-10"
                     />
                   </div>
-                  <span className="text-sm text-text-secondary group-hover:text-text-accent transition-colors duration-300">
+                  <span className="text-xs sm:text-sm text-text-secondary group-hover:text-text-accent transition-colors duration-300 text-center">
                     {tech.name}
                   </span>
                 </motion.div>
@@ -125,10 +125,10 @@ const Skills = () => {
 
           {/* Skills Progress Bars */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-2xl font-bold text-text-primary text-center mb-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-text-primary text-center mb-6 md:mb-8">
               Proficiency Levels
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {skillsData.map((skill, index) => (
                 <motion.div
                   key={skill.name}
@@ -136,14 +136,14 @@ const Skills = () => {
                   className="space-y-2"
                 >
                   <div className="flex justify-between items-center">
-                    <span className="text-text-primary font-medium">
+                    <span className="text-sm sm:text-base text-text-primary font-medium">
                       {skill.name}
                     </span>
-                    <span className="text-text-accent font-mono">
+                    <span className="text-sm sm:text-base text-text-accent font-mono">
                       {skill.percentage}%
                     </span>
                   </div>
-                  <div className="w-full bg-background-tertiary rounded-full h-3 overflow-hidden">
+                  <div className="w-full bg-background-tertiary rounded-full h-2.5 sm:h-3 overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
                       animate={isInView ? { width: `${skill.percentage}%` } : { width: 0 }}
@@ -173,7 +173,7 @@ const Skills = () => {
           {/* Skill Points */}
           <motion.div
             variants={itemVariants}
-            className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
           >
             {[
               {
@@ -196,13 +196,13 @@ const Skills = () => {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
-                className="bg-background-secondary border border-background-tertiary rounded-lg p-6 text-center"
+                className="bg-background-secondary border border-background-tertiary rounded-lg p-5 md:p-6 text-center"
               >
-                <div className="text-4xl mb-4">{point.icon}</div>
-                <h4 className="text-lg font-semibold text-text-primary mb-3">
+                <div className="text-3xl sm:text-4xl mb-3 md:mb-4">{point.icon}</div>
+                <h4 className="text-base sm:text-lg font-semibold text-text-primary mb-2 md:mb-3">
                   {point.title}
                 </h4>
-                <p className="text-text-secondary">
+                <p className="text-sm sm:text-base text-text-secondary">
                   {point.description}
                 </p>
               </motion.div>

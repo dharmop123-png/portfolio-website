@@ -88,7 +88,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 px-4 overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 pb-24 md:pb-20 px-4 overflow-hidden">
       {/* Animated Background Particles */}
       <div className="absolute inset-0">
         {[...Array(50)].map((_, i) => (
@@ -114,7 +114,7 @@ const Hero = () => {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
         {/* Left Content */}
         <motion.div
           variants={containerVariants}
@@ -129,7 +129,7 @@ const Hero = () => {
             </span>
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+          <motion.h1 variants={itemVariants} className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6">
             <span className="text-text-primary bg-gradient-to-r from-text-primary to-text-accent bg-clip-text text-transparent">
               Dharmendra
             </span>
@@ -137,8 +137,8 @@ const Hero = () => {
             <span className="text-text-primary">Kumar</span>
           </motion.h1>
 
-          <motion.div variants={itemVariants} className="mb-6">
-            <div className="text-xl md:text-3xl text-text-secondary font-mono min-h-[3rem] flex items-center">
+          <motion.div variants={itemVariants} className="mb-4 md:mb-6">
+            <div className="text-lg sm:text-xl md:text-3xl text-text-secondary font-mono min-h-[2.5rem] md:min-h-[3rem] flex items-center flex-wrap">
               <span className="text-text-accent mr-2">I'm a </span>
               <span className="text-text-accent font-bold">{currentText}</span>
               <motion.span 
@@ -151,50 +151,50 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          <motion.p variants={itemVariants} className="text-lg text-text-secondary mb-8 max-w-lg leading-relaxed">
+          <motion.p variants={itemVariants} className="text-base md:text-lg text-text-secondary mb-6 md:mb-8 max-w-lg leading-relaxed">
             Computer Science Engineering student passionate about building innovative web solutions. 
             Founder of Coders Circle community (1,200+ members). Specializing in full-stack development 
             with expertise in React, Tailwind CSS, and modern web technologies.
           </motion.p>
 
           {/* Stats Section */}
-          <motion.div variants={itemVariants} className="grid grid-cols-3 gap-4 mb-8">
+          <motion.div variants={itemVariants} className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 md:mb-8">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="text-center p-4 bg-background-secondary/50 backdrop-blur-sm rounded-lg border border-text-accent/10"
+                className="text-center p-2 sm:p-4 bg-background-secondary/50 backdrop-blur-sm rounded-lg border border-text-accent/10"
               >
-                <div className="text-2xl mb-1">{stat.icon}</div>
-                <div className="text-xl font-bold text-text-accent">{stat.number}</div>
-                <div className="text-sm text-text-secondary">{stat.label}</div>
+                <div className="text-xl sm:text-2xl mb-1">{stat.icon}</div>
+                <div className="text-base sm:text-xl font-bold text-text-accent">{stat.number}</div>
+                <div className="text-xs sm:text-sm text-text-secondary">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
 
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mb-8">
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-3 md:gap-4 mb-6 md:mb-8">
             <motion.a
               href="/Dharmendra_Kumar_Resume.pdf"
               download="Dharmendra_Kumar_Resume.pdf"
               whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(100, 255, 218, 0.3)" }}
               whileTap={{ scale: 0.95 }}
-              className="btn-primary flex items-center gap-2"
+              className="btn-primary flex items-center gap-2 text-sm sm:text-base"
             >
-              <Download size={18} />
+              <Download size={16} className="sm:w-[18px] sm:h-[18px]" />
               Download Resume
             </motion.a>
             <motion.a
               href="#projects"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="btn-secondary flex items-center gap-2"
+              className="btn-secondary flex items-center gap-2 text-sm sm:text-base"
             >
-              <ExternalLink size={18} />
+              <ExternalLink size={16} className="sm:w-[18px] sm:h-[18px]" />
               View My Work
             </motion.a>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="flex gap-4">
+          <motion.div variants={itemVariants} className="flex gap-3 md:gap-4">
             {socialLinks.map((social, index) => (
               <motion.a
                 key={social.label}
@@ -225,9 +225,9 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="relative flex items-center justify-center"
+          className="relative flex items-center justify-center hidden lg:block"
         >
-          <div className="relative w-80 h-80">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
             {/* Animated Rings */}
             <motion.div
               animate={{ rotate: 360 }}
@@ -323,20 +323,20 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
-        onClick={() => document.getElementById('about').scrollIntoView({ behavior: 'smooth' })}
+        className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
+        onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="flex flex-col items-center text-text-secondary hover:text-text-accent transition-colors duration-300"
         >
-          <span className="text-sm mb-2 font-mono">Scroll to explore</span>
+          <span className="text-xs sm:text-sm mb-2 font-mono">Scroll to explore</span>
           <motion.div
             animate={{ y: [0, 5, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            <ChevronDown size={24} />
+            <ChevronDown size={20} className="sm:w-6 sm:h-6" />
           </motion.div>
         </motion.div>
       </motion.div>

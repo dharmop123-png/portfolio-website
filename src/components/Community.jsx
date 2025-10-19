@@ -94,7 +94,7 @@ const Community = () => {
   }
 
   return (
-    <section id="community" className="py-20 px-4 bg-background-primary">
+    <section id="community" className="py-12 md:py-20 px-4 bg-background-primary">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
@@ -103,14 +103,14 @@ const Community = () => {
           animate={isInView ? "visible" : "hidden"}
         >
           {/* Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
+          <motion.div variants={itemVariants} className="text-center mb-12 md:mb-16">
             <motion.div
               initial={{ scale: 0 }}
               animate={isInView ? { scale: 1 } : { scale: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-block mb-6"
+              className="inline-block mb-4 md:mb-6"
             >
-              <div className="w-40 h-40 rounded-full border-4 border-background-tertiary hover:border-green-500 transition-all duration-300 p-4 mx-auto overflow-hidden bg-white flex items-center justify-center">
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-background-tertiary hover:border-green-500 transition-all duration-300 p-4 mx-auto overflow-hidden bg-white flex items-center justify-center">
                 <img 
                   src="/coders-circle-logo.png" 
                   alt="Coders Circle Logo" 
@@ -121,16 +121,16 @@ const Community = () => {
                     e.target.nextElementSibling.style.display = 'block';
                   }}
                 />
-                <Code size={64} className="text-white hidden" strokeWidth={2.5} />
+                <Code size={48} className="text-white hidden md:w-16 md:h-16" strokeWidth={2.5} />
               </div>
             </motion.div>
-            <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-3 md:mb-4">
               Coders Circle 🚀
             </h2>
-            <p className="text-xl text-text-accent font-semibold mb-4">
+            <p className="text-lg sm:text-xl text-text-accent font-semibold mb-3 md:mb-4 px-4">
               A Growing Tech Community Built by Students for Students
             </p>
-            <p className="text-lg text-text-secondary max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-text-secondary max-w-3xl mx-auto leading-relaxed px-4">
               Connect, collaborate, and grow with passionate learners and developers. 
               We help students through free resources, hackathons, and learning opportunities.
             </p>
@@ -139,22 +139,22 @@ const Community = () => {
           {/* Stats Section */}
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-12 md:mb-16"
           >
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-background-secondary border border-background-tertiary hover:border-green-500 rounded-2xl p-6 text-center transition-all duration-300"
+                className="bg-background-secondary border border-background-tertiary hover:border-green-500 rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-6 text-center transition-all duration-300"
               >
-                <div className={`w-12 h-12 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center mx-auto mb-4`}>
-                  <stat.icon size={24} className="text-white" />
+                <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center mx-auto mb-3 md:mb-4`}>
+                  <stat.icon size={20} className="text-white sm:w-6 sm:h-6" />
                 </div>
-                <div className="text-3xl font-bold text-text-accent mb-2">
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-text-accent mb-1 md:mb-2">
                   {stat.number}
                 </div>
-                <div className="text-sm text-text-secondary">
+                <div className="text-xs sm:text-sm text-text-secondary">
                   {stat.label}
                 </div>
               </motion.div>
@@ -164,13 +164,13 @@ const Community = () => {
           {/* About Section */}
           <motion.div
             variants={itemVariants}
-            className="bg-background-secondary border border-background-tertiary hover:border-green-500 rounded-2xl p-8 mb-16 transition-all duration-300"
+            className="bg-background-secondary border border-background-tertiary hover:border-green-500 rounded-xl md:rounded-2xl p-6 md:p-8 mb-12 md:mb-16 transition-all duration-300"
           >
-            <h3 className="text-2xl font-bold text-text-primary mb-6 flex items-center gap-3">
-              <Target className="text-text-accent" />
+            <h3 className="text-xl sm:text-2xl font-bold text-text-primary mb-4 md:mb-6 flex items-center gap-3">
+              <Target className="text-text-accent w-5 h-5 sm:w-6 sm:h-6" />
               About Us
             </h3>
-            <div className="space-y-4 text-text-secondary leading-relaxed">
+            <div className="space-y-3 md:space-y-4 text-sm sm:text-base text-text-secondary leading-relaxed">
               <p>
                 Coders Circle is a growing tech community built by students for students. 
                 Our goal is to connect passionate learners and developers from different colleges, 
@@ -188,27 +188,27 @@ const Community = () => {
           </motion.div>
 
           {/* Groups Section */}
-          <motion.div variants={itemVariants} className="mb-16">
-            <h3 className="text-2xl font-bold text-text-primary text-center mb-8">
+          <motion.div variants={itemVariants} className="mb-12 md:mb-16">
+            <h3 className="text-xl sm:text-2xl font-bold text-text-primary text-center mb-6 md:mb-8">
               Our Active Groups
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {groups.map((group, index) => (
                 <motion.div
                   key={group.name}
                   variants={itemVariants}
                   whileHover={{ scale: 1.03, y: -5 }}
-                  className="bg-background-secondary border border-background-tertiary hover:border-green-500 rounded-2xl p-6 transition-all duration-300"
+                  className="bg-background-secondary border border-background-tertiary hover:border-green-500 rounded-xl md:rounded-2xl p-4 md:p-6 transition-all duration-300"
                 >
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className={`w-14 h-14 bg-gradient-to-br ${group.color} rounded-xl flex items-center justify-center text-2xl`}>
+                  <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                    <div className={`w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br ${group.color} rounded-xl flex items-center justify-center text-xl md:text-2xl flex-shrink-0`}>
                       {group.emoji}
                     </div>
-                    <h4 className="text-lg font-semibold text-text-primary">
+                    <h4 className="text-base md:text-lg font-semibold text-text-primary">
                       {group.name}
                     </h4>
                   </div>
-                  <p className="text-text-secondary text-sm leading-relaxed">
+                  <p className="text-text-secondary text-xs md:text-sm leading-relaxed">
                     {group.description}
                   </p>
                 </motion.div>
@@ -217,20 +217,20 @@ const Community = () => {
           </motion.div>
 
           {/* Founders Section */}
-          <motion.div variants={itemVariants} className="mb-16">
-            <h3 className="text-2xl font-bold text-text-primary text-center mb-8">
+          <motion.div variants={itemVariants} className="mb-12 md:mb-16">
+            <h3 className="text-xl sm:text-2xl font-bold text-text-primary text-center mb-6 md:mb-8">
               Meet the Founders
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto">
               {founders.map((founder, index) => (
                 <motion.div
                   key={founder.name}
                   variants={itemVariants}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-background-secondary border border-background-tertiary hover:border-green-500 rounded-2xl p-8 text-center transition-all duration-300"
+                  className="bg-background-secondary border border-background-tertiary hover:border-green-500 rounded-xl md:rounded-2xl p-6 md:p-8 text-center transition-all duration-300"
                 >
                   {founder.hasImage ? (
-                    <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden border-4 border-green-500/30 hover:border-green-500 transition-all duration-300">
+                    <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-3 md:mb-4 rounded-full overflow-hidden border-4 border-green-500/30 hover:border-green-500 transition-all duration-300">
                       <img 
                         src={founder.image} 
                         alt={founder.name}
@@ -238,12 +238,12 @@ const Community = () => {
                       />
                     </div>
                   ) : (
-                    <div className="text-6xl mb-4">{founder.image}</div>
+                    <div className="text-4xl sm:text-6xl mb-3 md:mb-4">{founder.image}</div>
                   )}
-                  <h4 className="text-xl font-bold text-text-primary mb-2">
+                  <h4 className="text-lg sm:text-xl font-bold text-text-primary mb-2">
                     {founder.name}
                   </h4>
-                  <p className="text-text-accent font-semibold">
+                  <p className="text-sm sm:text-base text-text-accent font-semibold">
                     {founder.role}
                   </p>
                 </motion.div>
@@ -254,25 +254,25 @@ const Community = () => {
           {/* Join Section */}
           <motion.div
             variants={itemVariants}
-            className="bg-gradient-to-br from-text-accent/10 to-primary-500/10 border border-text-accent/30 hover:border-green-500 rounded-2xl p-8 md:p-12 text-center transition-all duration-300"
+            className="bg-gradient-to-br from-text-accent/10 to-primary-500/10 border border-text-accent/30 hover:border-green-500 rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-12 text-center transition-all duration-300"
           >
-            <h3 className="text-3xl font-bold text-text-primary mb-4">
+            <h3 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3 md:mb-4">
               Join Our Community Today! 🎉
             </h3>
-            <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
+            <p className="text-text-secondary text-sm sm:text-base md:text-lg mb-6 md:mb-8 max-w-2xl mx-auto px-4">
               Connect with 1,130+ passionate developers, access free resources, 
               and grow your skills together with us!
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 justify-center px-4">
               <motion.a
                 href="https://chat.whatsapp.com/JuNaszcCNQcHU1pKfEN8Lh"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-primary flex items-center gap-2"
+                className="btn-primary flex items-center justify-center gap-2 text-sm sm:text-base"
               >
-                <MessageCircle size={20} />
+                <MessageCircle size={18} className="sm:w-5 sm:h-5" />
                 Join WhatsApp Community
               </motion.a>
               <motion.a
@@ -281,20 +281,20 @@ const Community = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="btn-secondary flex items-center gap-2"
+                className="btn-secondary flex items-center justify-center gap-2 text-sm sm:text-base"
               >
-                <Linkedin size={20} />
+                <Linkedin size={18} className="sm:w-5 sm:h-5" />
                 Follow on LinkedIn
               </motion.a>
             </div>
           </motion.div>
 
           {/* Benefits Section */}
-          <motion.div variants={itemVariants} className="mt-16">
-            <h3 className="text-2xl font-bold text-text-primary text-center mb-8">
+          <motion.div variants={itemVariants} className="mt-12 md:mt-16">
+            <h3 className="text-xl sm:text-2xl font-bold text-text-primary text-center mb-6 md:mb-8">
               What You'll Get
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               {[
                 { icon: "📚", title: "Free Resources", description: "Access to courses, notes, and study materials" },
                 { icon: "🤝", title: "Networking", description: "Connect with developers from different colleges" },
@@ -307,14 +307,14 @@ const Community = () => {
                   key={benefit.title}
                   variants={itemVariants}
                   whileHover={{ scale: 1.02 }}
-                  className="bg-background-secondary border border-background-tertiary hover:border-green-500 rounded-xl p-6 flex items-start gap-4 transition-all duration-300"
+                  className="bg-background-secondary border border-background-tertiary hover:border-green-500 rounded-xl p-4 md:p-6 flex items-start gap-3 md:gap-4 transition-all duration-300"
                 >
-                  <div className="text-3xl">{benefit.icon}</div>
+                  <div className="text-2xl sm:text-3xl flex-shrink-0">{benefit.icon}</div>
                   <div>
-                    <h4 className="text-lg font-semibold text-text-primary mb-2">
+                    <h4 className="text-base sm:text-lg font-semibold text-text-primary mb-1 md:mb-2">
                       {benefit.title}
                     </h4>
-                    <p className="text-text-secondary text-sm">
+                    <p className="text-text-secondary text-xs sm:text-sm">
                       {benefit.description}
                     </p>
                   </div>

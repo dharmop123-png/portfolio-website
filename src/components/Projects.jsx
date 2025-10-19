@@ -161,9 +161,9 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="py-20 px-4 bg-background-secondary relative overflow-hidden">
+    <section id="projects" className="py-12 md:py-20 px-4 bg-background-secondary relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 hidden md:block">
         <div className="absolute top-20 left-10 text-4xl">⚡</div>
         <div className="absolute top-40 right-20 text-3xl">🚀</div>
         <div className="absolute bottom-40 left-20 text-5xl">💻</div>
@@ -177,14 +177,14 @@ const Projects = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="section-title mb-6">
+          <motion.div variants={itemVariants} className="text-center mb-12 md:mb-16 px-4">
+            <h2 className="section-title mb-4 md:mb-6">
               Featured Projects <span className="text-text-accent">👨‍💻</span>
             </h2>
-            <p className="text-xl text-text-primary font-semibold mb-4">
+            <p className="text-base sm:text-lg md:text-xl text-text-primary font-semibold mb-3 md:mb-4">
               CRAFTED WITH PASSION AND PRECISION
             </p>
-            <p className="text-text-secondary max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base text-text-secondary max-w-3xl mx-auto leading-relaxed">
               Explore a collection of my recent work, spanning web applications, mobile apps, 
               and full-stack solutions. Each project represents a unique challenge solved with 
               modern technologies and best practices.
@@ -194,7 +194,7 @@ const Projects = () => {
           {/* Enhanced Category Filter */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap justify-center gap-4 mb-12"
+            className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-8 md:mb-12 px-4"
           >
             {categories.map((category) => (
               <motion.button
@@ -202,15 +202,15 @@ const Projects = () => {
                 onClick={() => setSelectedCategory(category.id)}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className={`flex items-center gap-3 px-6 py-3 rounded-xl border-2 transition-all duration-300 relative overflow-hidden ${
+                className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-xl border-2 transition-all duration-300 relative overflow-hidden text-sm sm:text-base ${
                   selectedCategory === category.id
                     ? 'bg-text-accent text-background-primary border-text-accent shadow-lg'
                     : 'bg-background-primary text-text-secondary border-background-tertiary hover:border-text-accent hover:text-text-accent hover:shadow-md'
                 }`}
               >
-                <category.icon size={18} />
+                <category.icon size={16} className="sm:w-[18px] sm:h-[18px]" />
                 <span className="font-medium">{category.name}</span>
-                <span className={`text-xs px-2 py-1 rounded-full ${
+                <span className={`text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full ${
                   selectedCategory === category.id 
                     ? 'bg-background-primary/20 text-background-primary' 
                     : 'bg-text-accent/10 text-text-accent'
@@ -230,7 +230,7 @@ const Projects = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
             >
               {filteredProjects.map((project, index) => (
                 <motion.div
