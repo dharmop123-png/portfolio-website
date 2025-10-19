@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease;
+}
+
+/* Dark theme (default) */
+.dark body {
+  background: #0a192f;
+}
+
+/* Light theme */
+body:not(.dark body) {
+  background: #ffffff;
+}
+
+/* Custom scrollbar - Dark theme */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #112240;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #64ffda;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #52e5d2;
+}
+
+/* Custom scrollbar - Light theme */
+:not(.dark) ::-webkit-scrollbar {
+  width: 8px;
+}
+
+:not(.dark) ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #0d9488;
+  border-radius: 4px;
+}
+
+:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: #0f766e;
+}
+
+/* Custom components */
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-transparent border font-medium rounded-md transition-all duration-300 hover:-translate-y-1;
+    @apply dark:border-text-accent dark:text-text-accent dark:hover:bg-text-accent dark:hover:bg-opacity-10;
+    @apply border-primary-600 text-primary-600 hover:bg-primary-600 hover:bg-opacity-10;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 font-medium rounded-md transition-all duration-300 hover:-translate-y-1;
+    @apply dark:bg-background-tertiary dark:text-text-primary dark:border-background-tertiary dark:hover:bg-text-accent dark:hover:text-background-primary;
+    @apply bg-slate-100 text-slate-900 border-slate-200 hover:bg-primary-600 hover:text-white;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-center mb-12 relative;
+    @apply dark:text-text-primary text-slate-900;
+  }
+  
+  .section-title::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 rounded-full;
+    @apply dark:bg-text-accent bg-primary-600;
+    transform: translateX(-50%) translateY(10px);
+  }
+  
+  .tech-icon {
+    @apply w-12 h-12 transition-all duration-300 hover:scale-110 hover:drop-shadow-lg;
+  }
+  
+  .project-card {
+    @apply rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2;
+    @apply dark:bg-background-secondary dark:border-background-tertiary dark:hover:shadow-glow;
+    @apply bg-white border-slate-200 hover:shadow-xl border;
+  }
+  
+  .skill-bar {
+    @apply w-full rounded-full h-2 overflow-hidden;
+    @apply dark:bg-background-tertiary bg-slate-200;
+  }
+  
+  .skill-progress {
+    @apply h-full rounded-full transition-all duration-1000 ease-out;
+    @apply dark:bg-gradient-to-r dark:from-text-accent dark:to-primary-400;
+    @apply bg-gradient-to-r from-primary-600 to-primary-400;
+  }
+}
