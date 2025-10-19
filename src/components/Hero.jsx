@@ -78,7 +78,7 @@ const Hero = () => {
 
   const floatingVariants = {
     animate: {
-      y: [0, -20, 0],
+      y: [0, -10, 0],
       transition: {
         duration: 3,
         repeat: Infinity,
@@ -88,9 +88,9 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 pb-32 md:pb-24 lg:pb-20 px-4 overflow-visible md:overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 pb-40 sm:pb-32 md:pb-24 lg:pb-20 px-4 overflow-hidden z-0">
       {/* Animated Background Particles */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         {[...Array(50)].map((_, i) => (
           <motion.div
             key={i}

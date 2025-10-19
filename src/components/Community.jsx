@@ -94,7 +94,7 @@ const Community = () => {
   }
 
   return (
-    <section id="community" className="py-12 md:py-20 px-4 bg-background-primary">
+    <section id="community" className="py-12 md:py-20 px-4 bg-background-primary relative z-10">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}

@@ -54,7 +54,7 @@ const Education = () => {
   }
 
   return (
-    <section id="education" className="py-12 md:py-20 px-4 bg-background-secondary">
+    <section id="education" className="py-12 md:py-20 px-4 bg-background-secondary relative z-10">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
