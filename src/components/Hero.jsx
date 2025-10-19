@@ -88,7 +88,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 pb-32 md:pb-24 lg:pb-20 px-4 overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 pb-32 md:pb-24 lg:pb-20 px-4 overflow-visible md:overflow-hidden">
       {/* Animated Background Particles */}
       <div className="absolute inset-0">
         {[...Array(50)].map((_, i) => (
