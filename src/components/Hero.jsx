@@ -88,7 +88,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 pb-24 md:pb-20 px-4 overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 pb-32 md:pb-24 lg:pb-20 px-4 overflow-hidden">
       {/* Animated Background Particles */}
       <div className="absolute inset-0">
         {[...Array(50)].map((_, i) => (
@@ -114,7 +114,7 @@ const Hero = () => {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-12 items-center relative z-10">
         {/* Left Content */}
         <motion.div
           variants={containerVariants}
@@ -225,9 +225,9 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="relative flex items-center justify-center hidden lg:block"
+          className="relative flex items-center justify-center mt-8 lg:mt-0"
         >
-          <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
+          <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-80 md:h-80 mx-auto">
             {/* Animated Rings */}
             <motion.div
               animate={{ rotate: 360 }}
@@ -246,12 +246,12 @@ const Hero = () => {
               whileHover={{ scale: 1.1 }}
               variants={floatingVariants}
               animate="animate"
-              className="absolute inset-12 rounded-full bg-gradient-to-br from-text-accent/20 to-primary-500/20 backdrop-blur-sm flex items-center justify-center shadow-2xl"
+              className="absolute inset-12 sm:inset-14 rounded-full bg-gradient-to-br from-text-accent/20 to-primary-500/20 backdrop-blur-sm flex items-center justify-center shadow-2xl"
               style={{
                 boxShadow: "0 0 50px rgba(100, 255, 218, 0.3)"
               }}
             >
-              <div className="text-6xl">👨‍💻</div>
+              <div className="text-5xl sm:text-6xl">👨‍💻</div>
             </motion.div>
 
             {/* Enhanced Floating Tech Icons */}
@@ -268,7 +268,7 @@ const Hero = () => {
                 animate={{ 
                   opacity: 1, 
                   scale: 1,
-                  y: [0, -15, 0],
+                  y: [0, -12, 0],
                   rotate: [0, 5, -5, 0]
                 }}
                 whileHover={{ 
@@ -282,7 +282,7 @@ const Hero = () => {
                   y: { duration: 3 + index * 0.5, repeat: Infinity, ease: "easeInOut" },
                   rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
                 }}
-                className="absolute w-16 h-16 bg-background-secondary border border-text-accent/30 rounded-full flex items-center justify-center text-2xl shadow-glow cursor-pointer group"
+                className="absolute w-14 h-14 sm:w-16 sm:h-16 bg-background-secondary border border-text-accent/30 rounded-full flex items-center justify-center text-xl sm:text-2xl shadow-glow cursor-pointer group"
                 style={{
                   top: `${50 + 40 * Math.sin((item.angle * Math.PI) / 180)}%`,
                   left: `${50 + 40 * Math.cos((item.angle * Math.PI) / 180)}%`,
@@ -291,7 +291,7 @@ const Hero = () => {
                 title={item.label}
               >
                 {item.icon}
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-background-primary px-2 py-1 rounded text-xs text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-background-primary px-2 py-1 rounded text-xs text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                   {item.label}
                 </div>
               </motion.div>
@@ -323,7 +323,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.5 }}
-        className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
+        className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
         onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}
       >
         <motion.div
