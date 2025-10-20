@@ -41,7 +41,7 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-[100] transition-all duration-300 ${
         scrolled 
           ? 'bg-background-primary/95 backdrop-blur-md shadow-lg' 
           : 'bg-transparent'
@@ -114,11 +114,11 @@ const Navbar = () => {
         initial={false}
         animate={isOpen ? "open" : "closed"}
         variants={{
-          open: { opacity: 1, height: "auto" },
-          closed: { opacity: 0, height: 0 }
+          open: { opacity: 1, height: "auto", display: "block" },
+          closed: { opacity: 0, height: 0, transitionEnd: { display: "none" } }
         }}
         transition={{ duration: 0.3 }}
-        className="md:hidden overflow-hidden bg-background-secondary/95 backdrop-blur-md"
+        className="md:hidden overflow-hidden bg-background-primary/98 backdrop-blur-md shadow-lg border-t border-background-tertiary"
       >
         <div className="px-2 pt-2 pb-3 space-y-1">
           {navItems.map((item, index) => (

@@ -44,10 +44,10 @@ const Hero = () => {
   }, [charIndex, isDeleting, currentIndex])
 
   const socialLinks = [
-    { icon: Github, href: "https://dharmendrakr2004.github.io", label: "GitHub", color: "#333" },
+    { icon: Github, href: "https://github.com/dharmop123-png", label: "GitHub", color: "#333" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/dharmendra-kumar-143bb6334", label: "LinkedIn", color: "#0077B5" },
-    { icon: Mail, href: "mailto:dharmop123@gmail.com", label: "Email", color: "#EA4335" },
-    { icon: Instagram, href: "https://instagram.com/dharmendra", label: "Instagram", color: "#E4405F" },
+    { icon: Mail, href: "#contact", label: "Email", color: "#EA4335", scrollTo: true },
+    { icon: Instagram, href: "https://www.instagram.com/dh4rm_04?igsh=dmVkaDFnNXQ0enNo", label: "Instagram", color: "#E4405F" },
   ]
 
   const stats = [
@@ -199,8 +199,12 @@ const Hero = () => {
               <motion.a
                 key={social.label}
                 href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={social.scrollTo ? "_self" : "_blank"}
+                rel={social.scrollTo ? undefined : "noopener noreferrer"}
+                onClick={social.scrollTo ? (e) => {
+                  e.preventDefault();
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                } : undefined}
                 whileHover={{ 
                   scale: 1.2, 
                   y: -5,
@@ -284,8 +288,8 @@ const Hero = () => {
                 }}
                 className="absolute w-14 h-14 sm:w-16 sm:h-16 bg-background-secondary border border-text-accent/30 rounded-full flex items-center justify-center text-xl sm:text-2xl shadow-glow cursor-pointer group"
                 style={{
-                  top: `${50 + 40 * Math.sin((item.angle * Math.PI) / 180)}%`,
-                  left: `${50 + 40 * Math.cos((item.angle * Math.PI) / 180)}%`,
+                  top: `${50 + 47 * Math.sin((item.angle * Math.PI) / 180)}%`,
+                  left: `${50 + 47 * Math.cos((item.angle * Math.PI) / 180)}%`,
                   transform: 'translate(-50%, -50%)'
                 }}
                 title={item.label}
