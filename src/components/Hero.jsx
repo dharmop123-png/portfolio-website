@@ -249,10 +249,13 @@ const Hero = () => {
             
             {/* Central Avatar with Glow Effect */}
             <motion.div
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ 
+                scale: 1.1,
+                boxShadow: "0 0 50px rgba(34, 197, 94, 0.6)"
+              }}
               variants={floatingVariants}
               animate="animate"
-              className="absolute inset-12 sm:inset-14 rounded-full bg-gradient-to-br from-text-accent/20 to-primary-500/20 backdrop-blur-sm flex items-center justify-center shadow-2xl"
+              className="absolute inset-12 sm:inset-14 rounded-full bg-gradient-to-br from-text-accent/20 to-primary-500/20 backdrop-blur-sm flex items-center justify-center shadow-2xl border-2 border-transparent hover:border-green-500 transition-all duration-300 cursor-pointer"
               style={{
                 boxShadow: "0 0 50px rgba(100, 255, 218, 0.3)"
               }}
