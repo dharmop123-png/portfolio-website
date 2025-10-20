@@ -260,11 +260,11 @@ const Hero = () => {
 
             {/* Enhanced Floating Tech Icons */}
             {[
-              { icon: "⚛️", delay: 0, angle: 0, label: "React" },
-              { icon: "🚀", delay: 1, angle: 72, label: "Node.js" },
-              { icon: "⚡", delay: 2, angle: 144, label: "JavaScript" },
-              { icon: "🎯", delay: 3, angle: 216, label: "TypeScript" },
-              { icon: "🔥", delay: 4, angle: 288, label: "Next.js" },
+              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", delay: 0, angle: 0, label: "React" },
+              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", delay: 1, angle: 72, label: "Node.js" },
+              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", delay: 2, angle: 144, label: "JavaScript" },
+              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", delay: 3, angle: 216, label: "TypeScript" },
+              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", delay: 4, angle: 288, label: "Next.js" },
             ].map((item, index) => {
               // Calculate position - React and Node.js closer, TypeScript/JavaScript/Next.js on outer ring
               let radius;
@@ -298,7 +298,7 @@ const Hero = () => {
                   y: { duration: 3 + index * 0.5, repeat: Infinity, ease: "easeInOut" },
                   rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
                 }}
-                className="absolute w-14 h-14 sm:w-16 sm:h-16 bg-background-secondary border border-text-accent/30 rounded-full flex items-center justify-center text-xl sm:text-2xl shadow-glow cursor-pointer group"
+                className="absolute w-14 h-14 sm:w-16 sm:h-16 bg-background-secondary border border-text-accent/30 rounded-full flex items-center justify-center shadow-glow cursor-pointer group overflow-hidden"
                 style={{
                   top: `${top}%`,
                   left: `${left}%`,
@@ -306,8 +306,13 @@ const Hero = () => {
                 }}
                 title={item.label}
               >
-                {item.icon}
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-background-primary px-2 py-1 rounded text-xs text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                <img 
+                  src={item.icon} 
+                  alt={item.label}
+                  className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+                  style={{ filter: 'brightness(1.2)' }}
+                />
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-background-primary px-2 py-1 rounded text-xs text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
                   {item.label}
                 </div>
               </motion.div>
