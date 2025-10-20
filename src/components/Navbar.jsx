@@ -18,25 +18,55 @@ const Navbar = () => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden'
+      document.body.style.position = 'fixed'
+      document.body.style.width = '100%'
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
     }
     return () => {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
     }
   }, [isOpen])
 
-  // Smooth scroll function
-  const scrollToSection = (e, href) => {
-    e.preventDefault()
-    const target = document.querySelector(href)
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      })
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isOpen && !event.target.closest('nav')) {
+        setIsOpen(false)
+      }
     }
+    
+    if (isOpen) {
+      document.addEventListener('click', handleClickOutside)
+    }
+    
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+    }
+  }, [isOpen])
+
+  // Smooth scroll function with guaranteed menu close
+  const scrollToSection = (sectionId) => {
+    // First, close the menu immediately
     setIsOpen(false)
+    
+    // Small delay to allow menu to start closing before scroll
+    setTimeout(() => {
+      const target = document.querySelector(sectionId)
+      if (target) {
+        const navbarHeight = 80 // Approximate navbar height
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        })
+      }
+    }, 100)
   }
 
   const navItems = [
@@ -78,10 +108,9 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <div className="flex items-baseline space-x-8">
               {navItems.map((item, index) => (
-                <motion.a
+                <motion.button
                   key={item.name}
-                  href={item.href}
-                  onClick={(e) => scrollToSection(e, item.href)}
+                  onClick={() => scrollToSection(item.href)}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -90,7 +119,7 @@ const Navbar = () => {
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-text-accent transition-all duration-300 group-hover:w-full"></span>
-                </motion.a>
+                </motion.button>
               ))}
             </div>
           </div>
@@ -142,16 +171,12 @@ const Navbar = () => {
           {navItems.map((item, index) => (
             <motion.button
               key={item.name}
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                scrollToSection(e, item.href);
-              }}
+              onClick={() => scrollToSection(item.href)}
               type="button"
               initial={{ opacity: 0, x: -20 }}
               animate={isOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="text-text-secondary hover:text-text-accent hover:bg-background-tertiary w-full text-left block px-4 py-3 text-base font-medium transition-colors duration-300 cursor-pointer rounded touch-manipulation"
+              className="text-text-secondary hover:text-text-accent active:text-text-accent active:bg-background-tertiary hover:bg-background-tertiary w-full text-left block px-4 py-3 text-base font-medium transition-colors duration-200 cursor-pointer rounded touch-manipulation"
             >
               {item.name}
             </motion.button>
