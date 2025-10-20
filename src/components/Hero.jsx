@@ -260,11 +260,11 @@ const Hero = () => {
 
             {/* Enhanced Floating Tech Icons */}
             {[
-              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", delay: 0, angle: 0, label: "React" },
-              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", delay: 1, angle: 72, label: "Node.js" },
-              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", delay: 2, angle: 144, label: "JavaScript" },
-              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", delay: 3, angle: 216, label: "TypeScript" },
-              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", delay: 4, angle: 288, label: "Next.js" },
+              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", delay: 0, angle: 0, label: "React", bgColor: "transparent" },
+              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", delay: 1, angle: 72, label: "Node.js", bgColor: "transparent" },
+              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", delay: 2, angle: 144, label: "JavaScript", bgColor: "transparent" },
+              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", delay: 3, angle: 216, label: "TypeScript", bgColor: "transparent" },
+              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", delay: 4, angle: 288, label: "Next.js", bgColor: "#ffffff" },
             ].map((item, index) => {
               // Calculate position - React and Node.js closer, TypeScript/JavaScript/Next.js on outer ring
               let radius;
@@ -306,12 +306,21 @@ const Hero = () => {
                 }}
                 title={item.label}
               >
-                <img 
-                  src={item.icon} 
-                  alt={item.label}
-                  className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
-                  style={{ filter: 'brightness(1.2)' }}
-                />
+                <div 
+                  className="w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center p-1.5"
+                  style={{ backgroundColor: item.bgColor }}
+                >
+                  <img 
+                    src={item.icon} 
+                    alt={item.label}
+                    className="w-full h-full object-contain"
+                    style={{ filter: item.label === "Next.js" ? 'invert(1)' : 'brightness(1.2)' }}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = `https://via.placeholder.com/40/64ffda/000000?text=${item.label.charAt(0)}`;
+                    }}
+                  />
+                </div>
                 <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-background-primary px-2 py-1 rounded text-xs text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
                   {item.label}
                 </div>
