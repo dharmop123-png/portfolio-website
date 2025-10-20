@@ -236,13 +236,15 @@ const Hero = () => {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 rounded-full border-2 border-text-accent/20"
+              whileHover={{ borderColor: "rgb(34, 197, 94)", borderWidth: "3px" }}
+              className="absolute inset-0 rounded-full border-2 border-text-accent/20 hover:border-green-500 transition-all duration-300 cursor-pointer"
             ></motion.div>
             
             <motion.div
               animate={{ rotate: -360 }}
               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-8 rounded-full border border-text-accent/10"
+              whileHover={{ borderColor: "rgb(34, 197, 94)", borderWidth: "2px" }}
+              className="absolute inset-8 rounded-full border border-text-accent/10 hover:border-green-500 transition-all duration-300 cursor-pointer"
             ></motion.div>
             
             {/* Central Avatar with Glow Effect */}
@@ -290,7 +292,7 @@ const Hero = () => {
                 whileHover={{ 
                   scale: 1.2, 
                   y: -10,
-                  boxShadow: "0 10px 25px rgba(100, 255, 218, 0.4)"
+                  boxShadow: "0 10px 25px rgba(34, 197, 94, 0.5)"
                 }}
                 transition={{
                   duration: 2,
@@ -298,7 +300,7 @@ const Hero = () => {
                   y: { duration: 3 + index * 0.5, repeat: Infinity, ease: "easeInOut" },
                   rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
                 }}
-                className="absolute w-14 h-14 sm:w-16 sm:h-16 bg-background-secondary border border-text-accent/30 rounded-full flex items-center justify-center shadow-glow cursor-pointer group overflow-hidden"
+                className="absolute w-14 h-14 sm:w-16 sm:h-16 bg-background-secondary border border-text-accent/30 hover:border-green-500 rounded-full flex items-center justify-center shadow-glow cursor-pointer group overflow-hidden transition-all duration-300"
                 style={{
                   top: `${top}%`,
                   left: `${left}%`,
