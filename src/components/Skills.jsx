@@ -177,18 +177,18 @@ const Skills = () => {
             {[
               {
                 icon: "⚡",
-                title: "High Performance Development",
-                description: "Develop high performance SDKs and applications for web and mobile platforms."
+                title: "Full Stack Development Expertise",
+                description: "Proficient in React, Node.js, Express, MongoDB, and modern web technologies. Building scalable applications with clean, efficient code."
               },
               {
                 icon: "🏗️",
-                title: "Scalable Backend Infrastructure",
-                description: "Build highly scalable backend infrastructures for web and mobile applications."
+                title: "Real-World Projects",
+                description: "Developed multiple production-ready projects including Green Haven, Raahi travel platform, and a complete freelancing marketplace."
               },
               {
                 icon: "🔗",
-                title: "Third Party Integrations",
-                description: "Seamless integration of third party services like Firebase, AWS, and Digital Ocean."
+                title: "Community Builder & Networking",
+                description: "Founded Coders Circle, a thriving tech community with 1,200+ members. Connecting developers and fostering collaboration."
               }
             ].map((point, index) => (
               <motion.div
