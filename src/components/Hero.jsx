@@ -307,14 +307,17 @@ const Hero = () => {
                 title={item.label}
               >
                 <div 
-                  className="w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center p-1.5"
+                  className="w-full h-full rounded-full flex items-center justify-center p-2"
                   style={{ backgroundColor: item.bgColor }}
                 >
                   <img 
                     src={item.icon} 
                     alt={item.label}
-                    className="w-full h-full object-contain"
-                    style={{ filter: item.label === "Next.js" ? 'invert(1)' : 'brightness(1.2)' }}
+                    className="w-full h-full object-contain rounded-full"
+                    style={{ 
+                      filter: item.label === "Next.js" ? 'invert(1)' : 'brightness(1.2)',
+                      padding: '2px'
+                    }}
                     onError={(e) => {
                       e.target.onerror = null;
                       e.target.src = `https://via.placeholder.com/40/64ffda/000000?text=${item.label.charAt(0)}`;
