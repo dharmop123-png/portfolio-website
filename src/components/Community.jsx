@@ -126,7 +126,7 @@ const Community = () => {
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.3 }}
               className="text-2xl md:text-3xl font-bold font-mono text-text-accent mb-3 md:mb-4"
             >
@@ -136,8 +136,8 @@ const Community = () => {
                     key={index}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.1, delay: index * 0.08 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.2, delay: index * 0.1 }}
                   >
                     {char === " " ? "\u00A0" : char}
                   </motion.span>
@@ -145,10 +145,10 @@ const Community = () => {
                 <motion.span 
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
-                  animate={{ opacity: [1, 0, 1] }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0.3 }}
                   transition={{ 
-                    opacity: { duration: 1, delay: "Coders Circle".length * 0.08 + 0.5, repeat: Infinity }
+                    duration: 0.3,
+                    delay: "Coders Circle".length * 0.1 + 0.3
                   }}
                   className="text-text-accent ml-1"
                 >
