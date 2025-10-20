@@ -14,6 +14,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen])
+
   // Smooth scroll function
   const scrollToSection = (e, href) => {
     e.preventDefault()
@@ -128,17 +140,21 @@ const Navbar = () => {
       >
         <div className="px-2 pt-2 pb-3 space-y-1">
           {navItems.map((item, index) => (
-            <motion.a
+            <motion.button
               key={item.name}
-              href={item.href}
-              onClick={(e) => scrollToSection(e, item.href)}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                scrollToSection(e, item.href);
+              }}
+              type="button"
               initial={{ opacity: 0, x: -20 }}
               animate={isOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="text-text-secondary hover:text-text-accent hover:bg-background-tertiary block px-4 py-3 text-base font-medium transition-colors duration-300 cursor-pointer rounded touch-manipulation"
+              className="text-text-secondary hover:text-text-accent hover:bg-background-tertiary w-full text-left block px-4 py-3 text-base font-medium transition-colors duration-300 cursor-pointer rounded touch-manipulation"
             >
               {item.name}
-            </motion.a>
+            </motion.button>
           ))}
           <motion.a
             href="/resume.pdf"
