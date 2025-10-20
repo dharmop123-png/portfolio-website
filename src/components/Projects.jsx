@@ -177,8 +177,8 @@ const Projects = () => {
           animate="visible"
         >
           <motion.div variants={itemVariants} className="text-center mb-12 md:mb-16 px-4">
-            <h2 className="section-title mb-4 md:mb-6">
-              Featured Projects <span className="text-text-accent">👨‍💻</span>
+            <h2 className="text-3xl md:text-4xl font-bold font-mono text-text-accent mb-4 md:mb-6">
+              Featured Projects 👨‍💻
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-text-primary font-semibold mb-3 md:mb-4">
               CRAFTED WITH PASSION AND PRECISION

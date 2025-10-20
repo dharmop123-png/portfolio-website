@@ -123,7 +123,7 @@ const Community = () => {
                 <Code size={48} className="text-white hidden md:w-16 md:h-16" strokeWidth={2.5} />
               </div>
             </motion.div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-3 md:mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold font-mono text-text-accent mb-3 md:mb-4">
               Coders Circle 🚀
             </h2>
             <p className="text-lg sm:text-xl text-text-accent font-semibold mb-3 md:mb-4 px-4">

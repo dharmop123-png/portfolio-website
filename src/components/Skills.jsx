@@ -71,7 +71,7 @@ const Skills = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.h2 variants={itemVariants} className="section-title">
+          <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold font-mono text-text-accent text-center mb-12">
             Skills & Abilities ⚡
           </motion.h2>
 
