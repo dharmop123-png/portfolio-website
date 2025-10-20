@@ -357,7 +357,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.5 }}
-        className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-20"
+        className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-20 w-full flex justify-center"
         onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}
       >
         <motion.div
@@ -365,7 +365,7 @@ const Hero = () => {
           transition={{ duration: 2, repeat: Infinity }}
           className="flex flex-col items-center text-text-secondary hover:text-text-accent transition-colors duration-300"
         >
-          <span className="text-xs sm:text-sm mb-2 font-mono">Scroll to explore</span>
+          <span className="text-xs sm:text-sm mb-2 font-mono text-center">Scroll to explore</span>
           <motion.div
             animate={{ y: [0, 5, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
