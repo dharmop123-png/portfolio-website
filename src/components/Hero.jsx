@@ -266,8 +266,8 @@ const Hero = () => {
               { icon: "🎯", delay: 3, angle: 216, label: "TypeScript" },
               { icon: "🔥", delay: 4, angle: 288, label: "Next.js" },
             ].map((item, index) => {
-              // Calculate position to place icons exactly on outer circumference
-              const radius = 48; // Percentage from center - adjusted to touch outer ring
+              // Calculate position - React and Node.js closer, others on outer ring
+              const radius = (item.label === "React" || item.label === "Node.js") ? 42 : 48;
               const angleRad = (item.angle * Math.PI) / 180;
               const top = 50 + radius * Math.sin(angleRad);
               const left = 50 + radius * Math.cos(angleRad);
