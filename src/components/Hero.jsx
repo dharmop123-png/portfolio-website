@@ -357,7 +357,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.5 }}
-        className="absolute bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-20 w-full flex justify-center"
+        className="absolute bottom-6 md:bottom-8 left-0 right-0 mx-auto cursor-pointer z-20 flex justify-center"
         onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}
       >
         <motion.div
