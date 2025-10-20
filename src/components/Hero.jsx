@@ -266,14 +266,12 @@ const Hero = () => {
               { icon: "🎯", delay: 3, angle: 216, label: "TypeScript" },
               { icon: "🔥", delay: 4, angle: 288, label: "Next.js" },
             ].map((item, index) => {
-              // Calculate position - React and Node.js closer, TypeScript slightly in, others on outer ring
+              // Calculate position - React and Node.js closer, TypeScript/JavaScript/Next.js on outer ring
               let radius;
               if (item.label === "React" || item.label === "Node.js") {
                 radius = 42; // Closer to center
-              } else if (item.label === "TypeScript") {
-                radius = 45; // Slightly closer to outer ring
               } else {
-                radius = 48; // On outer ring
+                radius = 48; // On outer ring (TypeScript, JavaScript, Next.js)
               }
               const angleRad = (item.angle * Math.PI) / 180;
               const top = 50 + radius * Math.sin(angleRad);
