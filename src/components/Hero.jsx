@@ -265,7 +265,14 @@ const Hero = () => {
               { icon: "⚡", delay: 2, angle: 144, label: "JavaScript" },
               { icon: "🎯", delay: 3, angle: 216, label: "TypeScript" },
               { icon: "🔥", delay: 4, angle: 288, label: "Next.js" },
-            ].map((item, index) => (
+            ].map((item, index) => {
+              // Calculate position to place icons exactly on outer circumference
+              const radius = 48; // Percentage from center - adjusted to touch outer ring
+              const angleRad = (item.angle * Math.PI) / 180;
+              const top = 50 + radius * Math.sin(angleRad);
+              const left = 50 + radius * Math.cos(angleRad);
+              
+              return (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0 }}
@@ -288,8 +295,8 @@ const Hero = () => {
                 }}
                 className="absolute w-14 h-14 sm:w-16 sm:h-16 bg-background-secondary border border-text-accent/30 rounded-full flex items-center justify-center text-xl sm:text-2xl shadow-glow cursor-pointer group"
                 style={{
-                  top: `${50 + 50 * Math.sin((item.angle * Math.PI) / 180)}%`,
-                  left: `${50 + 50 * Math.cos((item.angle * Math.PI) / 180)}%`,
+                  top: `${top}%`,
+                  left: `${left}%`,
                   transform: 'translate(-50%, -50%)'
                 }}
                 title={item.label}
@@ -299,7 +306,8 @@ const Hero = () => {
                   {item.label}
                 </div>
               </motion.div>
-            ))}
+            )}
+            )}
 
             {/* Additional Decorative Elements */}
             <motion.div
