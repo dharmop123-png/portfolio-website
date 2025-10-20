@@ -71,29 +71,39 @@ const Skills = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.h2 
-            variants={itemVariants} 
-            className="text-2xl md:text-3xl font-bold font-mono text-text-accent text-center mb-12 flex items-center justify-center gap-1"
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3 }}
+            className="text-2xl md:text-3xl font-bold font-mono text-text-accent text-center mb-12"
           >
-            {"Skills & Abilities".split("").map((char, index) => (
-              <motion.span
-                key={index}
+            <div className="flex items-center justify-center gap-0">
+              {"Skills & Abilities".split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.1, delay: index * 0.08 }}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
+              <motion.span 
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.05, delay: index * 0.05 }}
+                whileInView={{ opacity: 1 }}
+                animate={{ opacity: [1, 0, 1] }}
+                viewport={{ once: true }}
+                transition={{ 
+                  opacity: { duration: 1, delay: "Skills & Abilities".length * 0.08 + 0.5, repeat: Infinity }
+                }}
+                className="text-text-accent ml-1"
               >
-                {char === " " ? "\u00A0" : char}
+                |
               </motion.span>
-            ))}
-            <motion.span 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: [0, 1, 0, 1] }}
-              transition={{ duration: 1, delay: "Skills & Abilities".length * 0.05, repeat: Infinity }}
-              className="text-text-accent ml-1"
-            >
-              |
-            </motion.span>
-          </motion.h2>
+            </div>
+          </motion.div>
 
           <motion.div
             variants={itemVariants}
