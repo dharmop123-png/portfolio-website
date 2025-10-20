@@ -288,8 +288,8 @@ const Hero = () => {
                 }}
                 className="absolute w-14 h-14 sm:w-16 sm:h-16 bg-background-secondary border border-text-accent/30 rounded-full flex items-center justify-center text-xl sm:text-2xl shadow-glow cursor-pointer group"
                 style={{
-                  top: `${50 + 47 * Math.sin((item.angle * Math.PI) / 180)}%`,
-                  left: `${50 + 47 * Math.cos((item.angle * Math.PI) / 180)}%`,
+                  top: `${50 + 50 * Math.sin((item.angle * Math.PI) / 180)}%`,
+                  left: `${50 + 50 * Math.cos((item.angle * Math.PI) / 180)}%`,
                   transform: 'translate(-50%, -50%)'
                 }}
                 title={item.label}
