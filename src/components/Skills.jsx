@@ -177,8 +177,8 @@ const Skills = () => {
             {[
               {
                 icon: "⚡",
-                title: "Full Stack Development Expertise",
-                description: "Proficient in React, Node.js, Express, MongoDB, and modern web technologies. Building scalable applications with clean, efficient code."
+                title: "Coding & Problem Solving",
+                description: "Strong foundation in C and Java with expertise in Data Structures & Algorithms. Full stack development using React, Node.js, Express, and MongoDB."
               },
               {
                 icon: "🏗️",
