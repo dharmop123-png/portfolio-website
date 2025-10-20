@@ -100,10 +100,16 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-2">
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-text-secondary hover:text-text-accent p-2"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsOpen(!isOpen);
+              }}
+              type="button"
+              className="text-text-secondary hover:text-text-accent p-2 z-50 relative focus:outline-none focus:ring-2 focus:ring-text-accent rounded touch-manipulation"
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={28} className="pointer-events-none" /> : <Menu size={28} className="pointer-events-none" />}
             </button>
           </div>
         </div>
@@ -127,9 +133,9 @@ const Navbar = () => {
               href={item.href}
               onClick={(e) => scrollToSection(e, item.href)}
               initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              animate={isOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="text-text-secondary hover:text-text-accent block px-3 py-2 text-base font-medium transition-colors duration-300 cursor-pointer"
+              className="text-text-secondary hover:text-text-accent hover:bg-background-tertiary block px-4 py-3 text-base font-medium transition-colors duration-300 cursor-pointer rounded touch-manipulation"
             >
               {item.name}
             </motion.a>

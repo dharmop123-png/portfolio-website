@@ -88,7 +88,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 pb-40 sm:pb-32 md:pb-24 lg:pb-20 px-4 overflow-hidden z-0">
+    <section id="home" className="min-h-screen flex items-center justify-center relative pt-20 pb-40 sm:pb-32 md:pb-24 lg:pb-20 px-4 overflow-x-hidden z-0">
       {/* Animated Background Particles */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(50)].map((_, i) => (
@@ -229,9 +229,9 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="relative flex items-center justify-center mt-8 lg:mt-0"
+          className="relative flex items-center justify-center mt-8 lg:mt-0 py-8"
         >
-          <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-80 md:h-80 mx-auto">
+          <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 mx-auto">
             {/* Animated Rings */}
             <motion.div
               animate={{ rotate: 360 }}
