@@ -123,8 +123,15 @@ const Community = () => {
                 <Code size={48} className="text-white hidden md:w-16 md:h-16" strokeWidth={2.5} />
               </div>
             </motion.div>
-            <h2 className="text-3xl md:text-4xl font-bold font-mono text-text-accent mb-3 md:mb-4">
-              Coders Circle 🚀
+            <h2 className="text-3xl md:text-4xl font-bold font-mono text-text-accent mb-3 md:mb-4 flex items-center justify-center gap-2">
+              <span>Coders Circle</span>
+              <motion.span 
+                animate={{ opacity: [1, 0, 1] }}
+                transition={{ duration: 1, repeat: Infinity }}
+                className="text-text-accent"
+              >
+                |
+              </motion.span>
             </h2>
             <p className="text-lg sm:text-xl text-text-accent font-semibold mb-3 md:mb-4 px-4">
               A Growing Tech Community Built by Students for Students

@@ -71,8 +71,15 @@ const Skills = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold font-mono text-text-accent text-center mb-12">
-            Skills & Abilities ⚡
+          <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold font-mono text-text-accent text-center mb-12 flex items-center justify-center gap-2">
+            <span>Skills & Abilities</span>
+            <motion.span 
+              animate={{ opacity: [1, 0, 1] }}
+              transition={{ duration: 1, repeat: Infinity }}
+              className="text-text-accent"
+            >
+              |
+            </motion.span>
           </motion.h2>
 
           <motion.div
