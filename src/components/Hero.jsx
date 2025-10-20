@@ -261,10 +261,10 @@ const Hero = () => {
             {/* Enhanced Floating Tech Icons */}
             {[
               { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", delay: 0, angle: 0, label: "React", bgColor: "transparent" },
-              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", delay: 1, angle: 72, label: "Node.js", bgColor: "transparent" },
-              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", delay: 2, angle: 144, label: "JavaScript", bgColor: "transparent" },
-              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", delay: 3, angle: 216, label: "TypeScript", bgColor: "transparent" },
-              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", delay: 4, angle: 288, label: "Next.js", bgColor: "#ffffff" },
+              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", delay: 1, angle: 72, label: "Python", bgColor: "transparent" },
+              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", delay: 2, angle: 144, label: "Java", bgColor: "transparent" },
+              { icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4", delay: 3, angle: 216, label: "Tailwind", bgColor: "transparent" },
+              { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", delay: 4, angle: 288, label: "MongoDB", bgColor: "transparent" },
             ].map((item, index) => {
               // Calculate position - React and Node.js closer, TypeScript/JavaScript/Next.js on outer ring
               let radius;
@@ -315,7 +315,7 @@ const Hero = () => {
                     alt={item.label}
                     className="w-full h-full object-contain rounded-full"
                     style={{ 
-                      filter: item.label === "Next.js" ? 'invert(1)' : 'brightness(1.2)',
+                      filter: 'brightness(1.2)',
                       padding: '2px'
                     }}
                     onError={(e) => {
