@@ -123,8 +123,14 @@ const Community = () => {
                 <Code size={48} className="text-white hidden md:w-16 md:h-16" strokeWidth={2.5} />
               </div>
             </motion.div>
-            <h2 className="text-3xl md:text-4xl font-bold font-mono text-text-accent mb-3 md:mb-4 flex items-center justify-center gap-2">
-              <span>Coders Circle</span>
+            <h2 className="text-2xl md:text-3xl font-bold font-mono text-text-accent mb-3 md:mb-4 flex items-center justify-center gap-2">
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                Coders Circle
+              </motion.span>
               <motion.span 
                 animate={{ opacity: [1, 0, 1] }}
                 transition={{ duration: 1, repeat: Infinity }}

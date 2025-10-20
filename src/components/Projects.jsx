@@ -177,8 +177,14 @@ const Projects = () => {
           animate="visible"
         >
           <motion.div variants={itemVariants} className="text-center mb-12 md:mb-16 px-4">
-            <h2 className="text-3xl md:text-4xl font-bold font-mono text-text-accent mb-4 md:mb-6 flex items-center justify-center gap-2">
-              <span>Featured Projects</span>
+            <h2 className="text-2xl md:text-3xl font-bold font-mono text-text-accent mb-4 md:mb-6 flex items-center justify-center gap-2">
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+                Featured Projects
+              </motion.span>
               <motion.span 
                 animate={{ opacity: [1, 0, 1] }}
                 transition={{ duration: 1, repeat: Infinity }}

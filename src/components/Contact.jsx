@@ -97,8 +97,17 @@ const Contact = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-bold font-mono text-text-accent text-center mb-12 flex items-center justify-center gap-2">
-            <span>Get In Touch</span>
+          <motion.h2 
+            variants={itemVariants} 
+            className="text-2xl md:text-3xl font-bold font-mono text-text-accent text-center mb-12 flex items-center justify-center gap-2"
+          >
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              Get In Touch
+            </motion.span>
             <motion.span 
               animate={{ opacity: [1, 0, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
