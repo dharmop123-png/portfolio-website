@@ -73,19 +73,23 @@ const Skills = () => {
         >
           <motion.h2 
             variants={itemVariants} 
-            className="text-2xl md:text-3xl font-bold font-mono text-text-accent text-center mb-12 flex items-center justify-center gap-2"
+            className="text-2xl md:text-3xl font-bold font-mono text-text-accent text-center mb-12 flex items-center justify-center gap-1"
           >
-            <motion.span
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              Skills & Abilities
-            </motion.span>
+            {"Skills & Abilities".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.05, delay: index * 0.05 }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
             <motion.span 
-              animate={{ opacity: [1, 0, 1] }}
-              transition={{ duration: 1, repeat: Infinity }}
-              className="text-text-accent"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1, 0, 1] }}
+              transition={{ duration: 1, delay: "Skills & Abilities".length * 0.05, repeat: Infinity }}
+              className="text-text-accent ml-1"
             >
               |
             </motion.span>

@@ -123,18 +123,22 @@ const Community = () => {
                 <Code size={48} className="text-white hidden md:w-16 md:h-16" strokeWidth={2.5} />
               </div>
             </motion.div>
-            <h2 className="text-2xl md:text-3xl font-bold font-mono text-text-accent mb-3 md:mb-4 flex items-center justify-center gap-2">
-              <motion.span
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              >
-                Coders Circle
-              </motion.span>
+            <h2 className="text-2xl md:text-3xl font-bold font-mono text-text-accent mb-3 md:mb-4 flex items-center justify-center gap-1">
+              {"Coders Circle".split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.05, delay: index * 0.05 }}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
               <motion.span 
-                animate={{ opacity: [1, 0, 1] }}
-                transition={{ duration: 1, repeat: Infinity }}
-                className="text-text-accent"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: [0, 1, 0, 1] }}
+                transition={{ duration: 1, delay: "Coders Circle".length * 0.05, repeat: Infinity }}
+                className="text-text-accent ml-1"
               >
                 |
               </motion.span>
