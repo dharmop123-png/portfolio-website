@@ -1,10 +1,9 @@
 import React, { useState, useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Instagram } from 'lucide-react'
 
 const Contact = () => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -90,13 +89,13 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-20 px-4 bg-background-secondary">
+    <section id="contact" className="py-12 md:py-20 px-4 bg-background-secondary relative z-10">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate="visible"
         >
           <motion.h2 variants={itemVariants} className="section-title">
             Get In Touch 📧
@@ -154,7 +153,7 @@ const Contact = () => {
                   Follow Me
                 </h3>
                 <div className="flex gap-4">
-                  {socialLinks.map((social, index) => (
+                  {socialLinks.map((social) => (
                     <motion.a
                       key={social.label}
                       href={social.href}

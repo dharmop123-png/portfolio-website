@@ -1,10 +1,9 @@
 import React, { useState, useRef } from 'react'
-import { motion, useInView, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Github, ExternalLink, Code, Smartphone, Globe, Database, Star, Calendar, Users, Eye, GitBranch, Play } from 'lucide-react'
 
 const Projects = () => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [hoveredProject, setHoveredProject] = useState(null)
 
@@ -161,9 +160,9 @@ const Projects = () => {
   }
 
   return (
-    <section id="projects" className="py-12 md:py-20 px-4 bg-background-secondary relative overflow-hidden">
+    <section id="projects" className="py-12 md:py-20 px-4 bg-background-secondary relative z-10 overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 hidden md:block">
+      <div className="absolute inset-0 opacity-5 hidden md:block pointer-events-none">
         <div className="absolute top-20 left-10 text-4xl">⚡</div>
         <div className="absolute top-40 right-20 text-3xl">🚀</div>
         <div className="absolute bottom-40 left-20 text-5xl">💻</div>
@@ -175,7 +174,7 @@ const Projects = () => {
           ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate="visible"
         >
           <motion.div variants={itemVariants} className="text-center mb-12 md:mb-16 px-4">
             <h2 className="section-title mb-4 md:mb-6">

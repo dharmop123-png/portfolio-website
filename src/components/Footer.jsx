@@ -47,7 +47,7 @@ const Footer = () => {
               and building amazing web experiences with modern technologies.
             </p>
             <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
+              {socialLinks.map((social) => (
                 <motion.a
                   key={social.label}
                   href={social.href}

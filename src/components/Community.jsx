@@ -1,10 +1,9 @@
 import React, { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Users, Target, TrendingUp, Linkedin, MessageCircle, Bell, Code, Briefcase, BookOpen, Rocket, UserPlus, Award } from 'lucide-react'
 
 const Community = () => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   const stats = [
     { icon: Users, number: "1,200+", label: "Active Members", color: "from-blue-500 to-cyan-500" },
@@ -100,13 +99,13 @@ const Community = () => {
           ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate="visible"
         >
           {/* Header */}
           <motion.div variants={itemVariants} className="text-center mb-12 md:mb-16">
             <motion.div
               initial={{ scale: 0 }}
-              animate={isInView ? { scale: 1 } : { scale: 0 }}
+              animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
               className="inline-block mb-4 md:mb-6"
             >
@@ -141,7 +140,7 @@ const Community = () => {
             variants={itemVariants}
             className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-12 md:mb-16"
           >
-            {stats.map((stat, index) => (
+            {stats.map((stat) => (
               <motion.div
                 key={stat.label}
                 variants={itemVariants}
@@ -193,7 +192,7 @@ const Community = () => {
               Our Active Groups
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              {groups.map((group, index) => (
+              {groups.map((group) => (
                 <motion.div
                   key={group.name}
                   variants={itemVariants}
@@ -222,7 +221,7 @@ const Community = () => {
               Meet the Founders
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto">
-              {founders.map((founder, index) => (
+              {founders.map((founder) => (
                 <motion.div
                   key={founder.name}
                   variants={itemVariants}
@@ -302,7 +301,7 @@ const Community = () => {
                 { icon: "🏆", title: "Hackathon Updates", description: "Never miss important tech events and competitions" },
                 { icon: "💼", title: "Career Opportunities", description: "Get updates on internships and job openings" },
                 { icon: "🎓", title: "Learning Roadmaps", description: "Curated paths to master different technologies" }
-              ].map((benefit, index) => (
+              ].map((benefit) => (
                 <motion.div
                   key={benefit.title}
                   variants={itemVariants}

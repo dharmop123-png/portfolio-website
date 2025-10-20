@@ -1,9 +1,8 @@
 import React, { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 const Skills = () => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
 
   const skillsData = [
     { name: "HTML", percentage: 85, color: "from-orange-500 to-red-500" },
@@ -70,7 +69,7 @@ const Skills = () => {
           ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate="visible"
         >
           <motion.h2 variants={itemVariants} className="section-title">
             Skills & Abilities ⚡
@@ -97,7 +96,7 @@ const Skills = () => {
               Technologies I Work With
             </h3>
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4 sm:gap-6">
-              {techStack.map((tech, index) => (
+              {techStack.map((tech) => (
                 <motion.div
                   key={tech.name}
                   variants={iconVariants}
@@ -146,7 +145,7 @@ const Skills = () => {
                   <div className="w-full bg-background-tertiary rounded-full h-2.5 sm:h-3 overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
-                      animate={isInView ? { width: `${skill.percentage}%` } : { width: 0 }}
+                      animate={{ width: `${skill.percentage}%` }}
                       transition={{ 
                         duration: 1.5, 
                         delay: index * 0.2,

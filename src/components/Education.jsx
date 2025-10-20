@@ -1,10 +1,9 @@
 import React, { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { GraduationCap, Award, Calendar, MapPin, Book } from 'lucide-react'
 
 const Education = () => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
 
   const education = {
     degree: "Bachelor of Technology (B.Tech)",
@@ -60,7 +59,7 @@ const Education = () => {
           ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
+          animate="visible"
         >
           <motion.h2 variants={itemVariants} className="section-title">
             Education & Certifications 🎓
@@ -122,7 +121,7 @@ const Education = () => {
 
             {/* Certification Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-8 md:mb-12">
-              {certifications.map((cert, index) => (
+              {certifications.map((cert) => (
                 <motion.div
                   key={cert.platform}
                   variants={itemVariants}
@@ -156,7 +155,7 @@ const Education = () => {
                   <motion.span
                     key={topic}
                     initial={{ opacity: 0, scale: 0.8 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     whileHover={{ scale: 1.05 }}
                     className="px-3 sm:px-4 py-1.5 sm:py-2 bg-background-secondary border border-text-accent/30 rounded-lg text-xs sm:text-sm text-text-secondary hover:text-text-accent hover:border-text-accent transition-all duration-300 cursor-default"
