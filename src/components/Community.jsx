@@ -109,7 +109,7 @@ const Community = () => {
               transition={{ duration: 0.5 }}
               className="inline-block mb-4 md:mb-6"
             >
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-background-tertiary hover:border-green-500 transition-all duration-300 p-4 mx-auto overflow-hidden bg-white flex items-center justify-center">
+              <div className="w-40 h-40 md:w-52 md:h-52 rounded-full border-4 border-background-tertiary hover:border-green-500 transition-all duration-300 p-4 mx-auto overflow-hidden bg-white flex items-center justify-center">
                 <img 
                   src="/coders-circle-logo.png" 
                   alt="Coders Circle Logo" 
@@ -120,7 +120,7 @@ const Community = () => {
                     e.target.nextElementSibling.style.display = 'block';
                   }}
                 />
-                <Code size={48} className="text-white hidden md:w-16 md:h-16" strokeWidth={2.5} />
+                <Code size={64} className="text-white hidden md:w-20 md:h-20" strokeWidth={2.5} />
               </div>
             </motion.div>
             <motion.div
