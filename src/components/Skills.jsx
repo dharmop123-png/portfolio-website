@@ -224,11 +224,17 @@ const Skills = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-background-secondary border border-background-tertiary hover:border-green-500 rounded-lg p-5 md:p-6 text-center transition-all duration-300"
+                whileHover={{ scale: 1.1 }}
+                className="bg-background-secondary border border-background-tertiary hover:border-text-accent rounded-lg p-5 md:p-6 text-center transition-all duration-300 hover:shadow-glow cursor-pointer group"
               >
-                <div className="text-3xl sm:text-4xl mb-3 md:mb-4">{point.icon}</div>
-                <h4 className="text-base sm:text-lg font-semibold text-text-primary mb-2 md:mb-3">
+                <motion.div 
+                  className="text-3xl sm:text-4xl mb-3 md:mb-4"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {point.icon}
+                </motion.div>
+                <h4 className="text-base sm:text-lg font-semibold text-text-primary group-hover:text-text-accent mb-2 md:mb-3 transition-colors duration-300">
                   {point.title}
                 </h4>
                 <p className="text-sm sm:text-base text-text-secondary">

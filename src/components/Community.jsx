@@ -174,16 +174,20 @@ const Community = () => {
               <motion.div
                 key={stat.label}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-background-secondary border border-background-tertiary hover:border-green-500 rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-6 text-center transition-all duration-300"
+                whileHover={{ scale: 1.1, y: -5 }}
+                className="bg-background-secondary border border-background-tertiary hover:border-text-accent rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-6 text-center transition-all duration-300 hover:shadow-glow cursor-pointer group"
               >
-                <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center mx-auto mb-3 md:mb-4`}>
+                <motion.div 
+                  className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${stat.color} rounded-xl flex items-center justify-center mx-auto mb-3 md:mb-4`}
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <stat.icon size={20} className="text-white sm:w-6 sm:h-6" />
-                </div>
+                </motion.div>
                 <div className="text-xl sm:text-2xl md:text-3xl font-bold text-text-accent mb-1 md:mb-2">
                   {stat.number}
                 </div>
-                <div className="text-xs sm:text-sm text-text-secondary">
+                <div className="text-xs sm:text-sm text-text-secondary group-hover:text-text-accent transition-colors duration-300">
                   {stat.label}
                 </div>
               </motion.div>
@@ -193,10 +197,13 @@ const Community = () => {
           {/* About Section */}
           <motion.div
             variants={itemVariants}
-            className="bg-background-secondary border border-background-tertiary hover:border-green-500 rounded-xl md:rounded-2xl p-6 md:p-8 mb-12 md:mb-16 transition-all duration-300"
+            whileHover={{ scale: 1.02 }}
+            className="bg-background-secondary border border-background-tertiary hover:border-text-accent rounded-xl md:rounded-2xl p-6 md:p-8 mb-12 md:mb-16 transition-all duration-300 hover:shadow-glow cursor-pointer group"
           >
-            <h3 className="text-xl sm:text-2xl font-bold text-text-primary mb-4 md:mb-6 flex items-center gap-3">
-              <Target className="text-text-accent w-5 h-5 sm:w-6 sm:h-6" />
+            <h3 className="text-xl sm:text-2xl font-bold text-text-primary group-hover:text-text-accent mb-4 md:mb-6 flex items-center gap-3 transition-colors duration-300">
+              <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.3 }}>
+                <Target className="text-text-accent w-5 h-5 sm:w-6 sm:h-6" />
+              </motion.div>
               About Us
             </h3>
             <div className="space-y-3 md:space-y-4 text-sm sm:text-base text-text-secondary leading-relaxed">
@@ -226,14 +233,18 @@ const Community = () => {
                 <motion.div
                   key={group.name}
                   variants={itemVariants}
-                  whileHover={{ scale: 1.03, y: -5 }}
-                  className="bg-background-secondary border border-background-tertiary hover:border-green-500 rounded-xl md:rounded-2xl p-4 md:p-6 transition-all duration-300"
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  className="bg-background-secondary border border-background-tertiary hover:border-text-accent rounded-xl md:rounded-2xl p-4 md:p-6 transition-all duration-300 hover:shadow-glow cursor-pointer group"
                 >
                   <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                    <div className={`w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br ${group.color} rounded-xl flex items-center justify-center text-xl md:text-2xl flex-shrink-0`}>
+                    <motion.div 
+                      className={`w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br ${group.color} rounded-xl flex items-center justify-center text-xl md:text-2xl flex-shrink-0`}
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       {group.emoji}
-                    </div>
-                    <h4 className="text-base md:text-lg font-semibold text-text-primary">
+                    </motion.div>
+                    <h4 className="text-base md:text-lg font-semibold text-text-primary group-hover:text-text-accent transition-colors duration-300">
                       {group.name}
                     </h4>
                   </div>
@@ -255,8 +266,8 @@ const Community = () => {
                 <motion.div
                   key={founder.name}
                   variants={itemVariants}
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-background-secondary border border-background-tertiary hover:border-green-500 rounded-xl md:rounded-2xl p-6 md:p-8 text-center transition-all duration-300"
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  className="bg-background-secondary border border-background-tertiary hover:border-text-accent rounded-xl md:rounded-2xl p-6 md:p-8 text-center transition-all duration-300 hover:shadow-glow cursor-pointer group"
                 >
                   {founder.hasImage ? (
                     <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-3 md:mb-4 rounded-full overflow-hidden border-4 border-green-500/30 hover:border-green-500 transition-all duration-300">
@@ -269,7 +280,7 @@ const Community = () => {
                   ) : (
                     <div className="text-4xl sm:text-6xl mb-3 md:mb-4">{founder.image}</div>
                   )}
-                  <h4 className="text-lg sm:text-xl font-bold text-text-primary mb-2">
+                  <h4 className="text-lg sm:text-xl font-bold text-text-primary group-hover:text-text-accent mb-2 transition-colors duration-300">
                     {founder.name}
                   </h4>
                   <p className="text-sm sm:text-base text-text-accent font-semibold">
@@ -283,9 +294,10 @@ const Community = () => {
           {/* Join Section */}
           <motion.div
             variants={itemVariants}
-            className="bg-gradient-to-br from-text-accent/10 to-primary-500/10 border border-text-accent/30 hover:border-green-500 rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-12 text-center transition-all duration-300"
+            whileHover={{ scale: 1.02 }}
+            className="bg-gradient-to-br from-text-accent/10 to-primary-500/10 border border-text-accent/30 hover:border-text-accent rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-12 text-center transition-all duration-300 hover:shadow-glow cursor-pointer group"
           >
-            <h3 className="text-2xl sm:text-3xl font-bold text-text-primary mb-3 md:mb-4">
+            <h3 className="text-2xl sm:text-3xl font-bold text-text-primary group-hover:text-text-accent mb-3 md:mb-4 transition-colors duration-300">
               Join Our Community Today! 🎉
             </h3>
             <p className="text-text-secondary text-sm sm:text-base md:text-lg mb-6 md:mb-8 max-w-2xl mx-auto px-4">
@@ -335,12 +347,18 @@ const Community = () => {
                 <motion.div
                   key={benefit.title}
                   variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
-                  className="bg-background-secondary border border-background-tertiary hover:border-green-500 rounded-xl p-4 md:p-6 flex items-start gap-3 md:gap-4 transition-all duration-300"
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  className="bg-background-secondary border border-background-tertiary hover:border-text-accent rounded-xl p-4 md:p-6 flex items-start gap-3 md:gap-4 transition-all duration-300 hover:shadow-glow cursor-pointer group"
                 >
-                  <div className="text-2xl sm:text-3xl flex-shrink-0">{benefit.icon}</div>
+                  <motion.div 
+                    className="text-2xl sm:text-3xl flex-shrink-0"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {benefit.icon}
+                  </motion.div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-semibold text-text-primary mb-1 md:mb-2">
+                    <h4 className="text-base sm:text-lg font-semibold text-text-primary group-hover:text-text-accent mb-1 md:mb-2 transition-colors duration-300">
                       {benefit.title}
                     </h4>
                     <p className="text-text-secondary text-xs sm:text-sm">

@@ -158,17 +158,21 @@ const Contact = () => {
                       href={info.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.02, x: 5 }}
-                      className="flex items-center gap-4 p-4 bg-background-primary border border-background-tertiary rounded-lg hover:border-text-accent transition-all duration-300 group"
+                      whileHover={{ scale: 1.1, x: 5 }}
+                      className="flex items-center gap-4 p-4 bg-background-primary border border-background-tertiary rounded-lg hover:border-text-accent transition-all duration-300 hover:shadow-glow group cursor-pointer"
                     >
-                      <div className="w-12 h-12 bg-text-accent/10 rounded-full flex items-center justify-center group-hover:bg-text-accent/20 transition-colors duration-300">
+                      <motion.div 
+                        className="w-12 h-12 bg-text-accent/10 rounded-full flex items-center justify-center group-hover:bg-text-accent/20 transition-colors duration-300"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.3 }}
+                      >
                         <info.icon className="text-text-accent" size={20} />
-                      </div>
+                      </motion.div>
                       <div>
-                        <p className="text-text-secondary text-sm">
+                        <p className="text-text-secondary text-sm group-hover:text-text-accent transition-colors duration-300">
                           {info.title}
                         </p>
-                        <p className="text-text-primary font-medium">
+                        <p className="text-text-primary font-medium group-hover:text-text-accent transition-colors duration-300">
                           {info.value}
                         </p>
                       </div>
@@ -203,9 +207,10 @@ const Contact = () => {
               {/* Quick Info */}
               <motion.div
                 variants={itemVariants}
-                className="bg-background-primary border border-background-tertiary rounded-lg p-6"
+                whileHover={{ scale: 1.05 }}
+                className="bg-background-primary border border-background-tertiary rounded-lg p-6 transition-all duration-300 hover:border-text-accent hover:shadow-glow cursor-pointer group"
               >
-                <h4 className="text-lg font-semibold text-text-primary mb-3">
+                <h4 className="text-lg font-semibold text-text-primary group-hover:text-text-accent mb-3 transition-colors duration-300">
                   Quick Info
                 </h4>
                 <div className="space-y-2 text-text-secondary">

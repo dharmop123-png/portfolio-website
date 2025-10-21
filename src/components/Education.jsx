@@ -155,14 +155,20 @@ const Education = () => {
                 <motion.div
                   key={cert.platform}
                   variants={itemVariants}
-                  whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-background-primary border border-background-tertiary hover:border-green-500 rounded-xl p-4 sm:p-5 md:p-6 text-center transition-all duration-300"
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  className="bg-background-primary border border-background-tertiary hover:border-text-accent rounded-xl p-4 sm:p-5 md:p-6 text-center transition-all duration-300 hover:shadow-glow cursor-pointer group"
                 >
-                  <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">{cert.icon}</div>
+                  <motion.div 
+                    className="text-3xl sm:text-4xl mb-2 sm:mb-3"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {cert.icon}
+                  </motion.div>
                   <div className="text-2xl sm:text-3xl font-bold text-text-accent mb-1 sm:mb-2">
                     {cert.count}
                   </div>
-                  <div className="text-xs sm:text-sm text-text-secondary">
+                  <div className="text-xs sm:text-sm text-text-secondary group-hover:text-text-accent transition-colors duration-300">
                     {cert.platform}
                   </div>
                 </motion.div>

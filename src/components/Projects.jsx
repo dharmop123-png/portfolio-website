@@ -458,8 +458,11 @@ const Projects = () => {
             variants={itemVariants}
             className="text-center mt-16"
           >
-            <div className="bg-background-primary/50 backdrop-blur-sm border border-background-tertiary rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-text-primary mb-4">
+            <motion.div 
+              whileHover={{ scale: 1.02 }}
+              className="bg-background-primary/50 backdrop-blur-sm border border-background-tertiary hover:border-text-accent rounded-2xl p-8 transition-all duration-300 hover:shadow-glow cursor-pointer group"
+            >
+              <h3 className="text-2xl font-bold text-text-primary group-hover:text-text-accent mb-4 transition-colors duration-300">
                 Interested in More Projects?
               </h3>
               <p className="text-text-secondary mb-6 max-w-md mx-auto">
@@ -487,7 +490,7 @@ const Projects = () => {
                   Let's Collaborate
                 </motion.a>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
