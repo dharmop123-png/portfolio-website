@@ -107,9 +107,9 @@ const Community = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="inline-block mb-4 md:mb-6"
+              className="inline-block mb-6 md:mb-8"
             >
-              <div className="w-40 h-40 md:w-52 md:h-52 rounded-full border-4 border-background-tertiary hover:border-green-500 transition-all duration-300 p-4 mx-auto overflow-hidden bg-white flex items-center justify-center">
+              <div className="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 md:border-6 border-background-tertiary hover:border-green-500 transition-all duration-300 p-5 md:p-6 mx-auto overflow-hidden bg-white flex items-center justify-center shadow-lg">
                 <img 
                   src="/coders-circle-logo.png" 
                   alt="Coders Circle Logo" 
@@ -120,7 +120,7 @@ const Community = () => {
                     e.target.nextElementSibling.style.display = 'block';
                   }}
                 />
-                <Code size={64} className="text-white hidden md:w-20 md:h-20" strokeWidth={2.5} />
+                <Code size={80} className="text-white hidden md:w-28 md:h-28" strokeWidth={2.5} />
               </div>
             </motion.div>
             <motion.div
@@ -128,7 +128,7 @@ const Community = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.3 }}
-              className="text-2xl md:text-3xl font-bold font-mono text-text-accent mb-3 md:mb-4"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold font-mono text-text-accent mb-4 md:mb-6"
             >
               <div className="flex items-center justify-center gap-0">
                 {"Coders Circle".split("").map((char, index) => (
@@ -156,10 +156,10 @@ const Community = () => {
                 </motion.span>
               </div>
             </motion.div>
-            <p className="text-lg sm:text-xl text-text-accent font-semibold mb-3 md:mb-4 px-4">
+            <p className="text-xl sm:text-2xl md:text-3xl text-text-accent font-semibold mb-4 md:mb-6 px-4">
               A Growing Tech Community Built by Students for Students
             </p>
-            <p className="text-base sm:text-lg text-text-secondary max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-lg sm:text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed px-4">
               Connect, collaborate, and grow with passionate learners and developers. 
               We help students through free resources, hackathons, and learning opportunities.
             </p>
