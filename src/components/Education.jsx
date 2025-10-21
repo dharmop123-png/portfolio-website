@@ -15,21 +15,43 @@ const Education = () => {
   }
 
   const certifications = [
-    { platform: "Web Development", count: "10+", icon: "🌐" },
-    { platform: "Programming Languages", count: "8+", icon: "💻" },
-    { platform: "Data Structures & Algorithms", count: "12+", icon: "📊" },
-    { platform: "Problem Solving", count: "5+", icon: "🧩" }
+    { platform: "Web Development", count: "15+", icon: "🌐", color: "from-blue-500 to-cyan-500" },
+    { platform: "Programming Languages", count: "12+", icon: "💻", color: "from-green-500 to-emerald-500" },
+    { platform: "Data Structures & Algorithms", count: "10+", icon: "📊", color: "from-purple-500 to-pink-500" },
+    { platform: "Database & Backend", count: "8+", icon: "🗄️", color: "from-orange-500 to-red-500" }
   ]
 
   const certificationTopics = [
-    "Java Programming",
-    "Python Development",
-    "Web Development",
-    "Data Structures & Algorithms",
-    "Front-end Development",
-    "Back-end Development",
-    "Database Management",
-    "Git & Version Control"
+    // Programming Languages
+    { name: "Java Programming", category: "Programming", icon: "☕" },
+    { name: "Python Development", category: "Programming", icon: "🐍" },
+    { name: "C Programming", category: "Programming", icon: "⚡" },
+    { name: "JavaScript ES6+", category: "Programming", icon: "📜" },
+    
+    // Web Development - Frontend
+    { name: "HTML5 & CSS3", category: "Frontend", icon: "🎨" },
+    { name: "React.js", category: "Frontend", icon: "⚛️" },
+    { name: "Tailwind CSS", category: "Frontend", icon: "🎭" },
+    { name: "Responsive Web Design", category: "Frontend", icon: "📱" },
+    { name: "Bootstrap Framework", category: "Frontend", icon: "🅱️" },
+    
+    // Web Development - Backend
+    { name: "Node.js & Express", category: "Backend", icon: "🟢" },
+    { name: "REST API Development", category: "Backend", icon: "🔌" },
+    { name: "MongoDB", category: "Backend", icon: "🍃" },
+    { name: "MySQL Database", category: "Backend", icon: "🐬" },
+    
+    // DSA & Problem Solving
+    { name: "Data Structures", category: "DSA", icon: "🌳" },
+    { name: "Algorithms", category: "DSA", icon: "🧮" },
+    { name: "Problem Solving", category: "DSA", icon: "🧩" },
+    { name: "Time Complexity", category: "DSA", icon: "⏱️" },
+    
+    // Tools & Others
+    { name: "Git & GitHub", category: "Tools", icon: "📦" },
+    { name: "VS Code", category: "Tools", icon: "💻" },
+    { name: "Postman API", category: "Tools", icon: "📮" },
+    { name: "Figma Design", category: "Tools", icon: "🎨" }
   ]
 
   const containerVariants = {
@@ -146,7 +168,7 @@ const Education = () => {
           <motion.div variants={itemVariants}>
             <h3 className="text-xl sm:text-2xl font-bold text-text-primary text-center mb-6 md:mb-8 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3">
               <Award className="text-text-accent w-6 h-6 sm:w-7 sm:h-7" />
-              <span>25+ Professional Certifications</span>
+              <span>45+ Professional Certifications</span>
             </h3>
 
             {/* Certification Stats */}
@@ -159,8 +181,8 @@ const Education = () => {
                   className="bg-background-primary border border-background-tertiary hover:border-text-accent rounded-xl p-4 sm:p-5 md:p-6 text-center transition-all duration-300 hover:shadow-glow cursor-pointer group"
                 >
                   <motion.div 
-                    className="text-3xl sm:text-4xl mb-2 sm:mb-3"
-                    whileHover={{ scale: 1.1 }}
+                    className={`w-12 h-12 sm:w-14 sm:h-14 mx-auto mb-3 sm:mb-4 bg-gradient-to-br ${cert.color} rounded-xl flex items-center justify-center text-2xl sm:text-3xl`}
+                    whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.3 }}
                   >
                     {cert.icon}
@@ -180,25 +202,139 @@ const Education = () => {
               variants={itemVariants}
               className="bg-background-primary border border-background-tertiary rounded-xl md:rounded-2xl p-6 md:p-8"
             >
-              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
                 <Book className="text-text-accent w-5 h-5 sm:w-6 sm:h-6" size={24} />
                 <h4 className="text-lg sm:text-xl font-semibold text-text-primary">
-                  Certification Topics
+                  Certification Topics & Skills
                 </h4>
               </div>
-              <div className="flex flex-wrap gap-2 sm:gap-3">
-                {certificationTopics.map((topic, index) => (
-                  <motion.span
-                    key={topic}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ scale: 1.05 }}
-                    className="px-3 sm:px-4 py-1.5 sm:py-2 bg-background-secondary border border-text-accent/30 rounded-lg text-xs sm:text-sm text-text-secondary hover:text-text-accent hover:border-text-accent transition-all duration-300 cursor-default"
-                  >
-                    {topic}
-                  </motion.span>
-                ))}
+              
+              {/* Category-wise certifications */}
+              <div className="space-y-6">
+                {/* Programming Languages */}
+                <div>
+                  <h5 className="text-sm font-semibold text-text-accent mb-3 flex items-center gap-2">
+                    <span className="text-lg">💻</span>
+                    Programming Languages
+                  </h5>
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                    {certificationTopics
+                      .filter(topic => topic.category === "Programming")
+                      .map((topic, index) => (
+                        <motion.span
+                          key={topic.name}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                          whileHover={{ scale: 1.05, y: -2 }}
+                          className="px-3 sm:px-4 py-1.5 sm:py-2 bg-background-secondary border border-text-accent/30 rounded-lg text-xs sm:text-sm text-text-secondary hover:text-text-accent hover:border-text-accent transition-all duration-300 cursor-pointer flex items-center gap-2"
+                        >
+                          <span>{topic.icon}</span>
+                          {topic.name}
+                        </motion.span>
+                      ))}
+                  </div>
+                </div>
+
+                {/* Frontend Development */}
+                <div>
+                  <h5 className="text-sm font-semibold text-text-accent mb-3 flex items-center gap-2">
+                    <span className="text-lg">🎨</span>
+                    Frontend Development
+                  </h5>
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                    {certificationTopics
+                      .filter(topic => topic.category === "Frontend")
+                      .map((topic, index) => (
+                        <motion.span
+                          key={topic.name}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                          whileHover={{ scale: 1.05, y: -2 }}
+                          className="px-3 sm:px-4 py-1.5 sm:py-2 bg-background-secondary border border-text-accent/30 rounded-lg text-xs sm:text-sm text-text-secondary hover:text-text-accent hover:border-text-accent transition-all duration-300 cursor-pointer flex items-center gap-2"
+                        >
+                          <span>{topic.icon}</span>
+                          {topic.name}
+                        </motion.span>
+                      ))}
+                  </div>
+                </div>
+
+                {/* Backend Development */}
+                <div>
+                  <h5 className="text-sm font-semibold text-text-accent mb-3 flex items-center gap-2">
+                    <span className="text-lg">🗄️</span>
+                    Backend & Databases
+                  </h5>
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                    {certificationTopics
+                      .filter(topic => topic.category === "Backend")
+                      .map((topic, index) => (
+                        <motion.span
+                          key={topic.name}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                          whileHover={{ scale: 1.05, y: -2 }}
+                          className="px-3 sm:px-4 py-1.5 sm:py-2 bg-background-secondary border border-text-accent/30 rounded-lg text-xs sm:text-sm text-text-secondary hover:text-text-accent hover:border-text-accent transition-all duration-300 cursor-pointer flex items-center gap-2"
+                        >
+                          <span>{topic.icon}</span>
+                          {topic.name}
+                        </motion.span>
+                      ))}
+                  </div>
+                </div>
+
+                {/* DSA */}
+                <div>
+                  <h5 className="text-sm font-semibold text-text-accent mb-3 flex items-center gap-2">
+                    <span className="text-lg">🧮</span>
+                    Data Structures & Algorithms
+                  </h5>
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                    {certificationTopics
+                      .filter(topic => topic.category === "DSA")
+                      .map((topic, index) => (
+                        <motion.span
+                          key={topic.name}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                          whileHover={{ scale: 1.05, y: -2 }}
+                          className="px-3 sm:px-4 py-1.5 sm:py-2 bg-background-secondary border border-text-accent/30 rounded-lg text-xs sm:text-sm text-text-secondary hover:text-text-accent hover:border-text-accent transition-all duration-300 cursor-pointer flex items-center gap-2"
+                        >
+                          <span>{topic.icon}</span>
+                          {topic.name}
+                        </motion.span>
+                      ))}
+                  </div>
+                </div>
+
+                {/* Tools & Technologies */}
+                <div>
+                  <h5 className="text-sm font-semibold text-text-accent mb-3 flex items-center gap-2">
+                    <span className="text-lg">🛠️</span>
+                    Tools & Technologies
+                  </h5>
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                    {certificationTopics
+                      .filter(topic => topic.category === "Tools")
+                      .map((topic, index) => (
+                        <motion.span
+                          key={topic.name}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                          whileHover={{ scale: 1.05, y: -2 }}
+                          className="px-3 sm:px-4 py-1.5 sm:py-2 bg-background-secondary border border-text-accent/30 rounded-lg text-xs sm:text-sm text-text-secondary hover:text-text-accent hover:border-text-accent transition-all duration-300 cursor-pointer flex items-center gap-2"
+                        >
+                          <span>{topic.icon}</span>
+                          {topic.name}
+                        </motion.span>
+                      ))}
+                  </div>
+                </div>
               </div>
             </motion.div>
 
