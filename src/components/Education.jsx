@@ -15,43 +15,220 @@ const Education = () => {
   }
 
   const certifications = [
-    { platform: "Web Development", count: "15+", icon: "🌐", color: "from-blue-500 to-cyan-500" },
-    { platform: "Programming Languages", count: "12+", icon: "💻", color: "from-green-500 to-emerald-500" },
-    { platform: "Data Structures & Algorithms", count: "10+", icon: "📊", color: "from-purple-500 to-pink-500" },
-    { platform: "Database & Backend", count: "8+", icon: "🗄️", color: "from-orange-500 to-red-500" }
+    { platform: "Web Development", count: "7", icon: "🌐", color: "from-blue-500 to-cyan-500" },
+    { platform: "Microsoft & Cloud", count: "4", icon: "☁️", color: "from-green-500 to-emerald-500" },
+    { platform: "Programming & DSA", count: "5", icon: "💻", color: "from-purple-500 to-pink-500" },
+    { platform: "Events & Workshops", count: "8", icon: "🎯", color: "from-orange-500 to-red-500" }
   ]
 
-  const certificationTopics = [
-    // Programming Languages
-    { name: "Java Programming", category: "Programming", icon: "☕" },
-    { name: "Python Development", category: "Programming", icon: "🐍" },
-    { name: "C Programming", category: "Programming", icon: "⚡" },
-    { name: "JavaScript ES6+", category: "Programming", icon: "📜" },
-    
-    // Web Development - Frontend
-    { name: "HTML5 & CSS3", category: "Frontend", icon: "🎨" },
-    { name: "React.js", category: "Frontend", icon: "⚛️" },
-    { name: "Tailwind CSS", category: "Frontend", icon: "🎭" },
-    { name: "Responsive Web Design", category: "Frontend", icon: "📱" },
-    { name: "Bootstrap Framework", category: "Frontend", icon: "🅱️" },
-    
-    // Web Development - Backend
-    { name: "Node.js & Express", category: "Backend", icon: "🟢" },
-    { name: "REST API Development", category: "Backend", icon: "🔌" },
-    { name: "MongoDB", category: "Backend", icon: "🍃" },
-    { name: "MySQL Database", category: "Backend", icon: "🐬" },
-    
-    // DSA & Problem Solving
-    { name: "Data Structures", category: "DSA", icon: "🌳" },
-    { name: "Algorithms", category: "DSA", icon: "🧮" },
-    { name: "Problem Solving", category: "DSA", icon: "🧩" },
-    { name: "Time Complexity", category: "DSA", icon: "⏱️" },
-    
-    // Tools & Others
-    { name: "Git & GitHub", category: "Tools", icon: "📦" },
-    { name: "VS Code", category: "Tools", icon: "💻" },
-    { name: "Postman API", category: "Tools", icon: "📮" },
-    { name: "Figma Design", category: "Tools", icon: "🎨" }
+  const allCertificates = [
+    // Microsoft & Cloud (4)
+    { 
+      name: "Microsoft Certificate (AI in Azure)", 
+      category: "Microsoft", 
+      icon: "☁️",
+      issuer: "Microsoft",
+      date: "Jun 2025",
+      link: "#"
+    },
+    { 
+      name: "Generative AI in Azure", 
+      category: "Microsoft", 
+      icon: "🤖",
+      issuer: "Microsoft",
+      date: "Jun 2025",
+      link: "#"
+    },
+    { 
+      name: "Microsoft Certificate (Azure)", 
+      category: "Microsoft", 
+      icon: "☁️",
+      issuer: "Microsoft",
+      date: "Jun 2025",
+      link: "#"
+    },
+    { 
+      name: "Certificate Of Appreciation", 
+      category: "Microsoft", 
+      icon: "🏆",
+      issuer: "DevTown",
+      date: "Jul 2025",
+      link: "#"
+    },
+
+    // Web Development (7)
+    { 
+      name: "HTML & CSS Bootcamp", 
+      category: "Web Dev", 
+      icon: "🎨",
+      issuer: "LetsUpgrade",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "JavaScript Bootcamp", 
+      category: "Web Dev", 
+      icon: "📜",
+      issuer: "LetsUpgrade",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "5 Days Tailwind Bootcamp", 
+      category: "Web Dev", 
+      icon: "🎭",
+      issuer: "DevTown",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "SkillEcced Certification (React JS)", 
+      category: "Web Dev", 
+      icon: "⚛️",
+      issuer: "SkillEcced",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "Web Dev Workshop", 
+      category: "Web Dev", 
+      icon: "🌐",
+      issuer: "DNA - Developers Of Next-Gen Applications",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "Web3 Certification", 
+      category: "Web Dev", 
+      icon: "🔗",
+      issuer: "Hashtag Web3 Academy",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "Web3 Decoded Workshop", 
+      category: "Web Dev", 
+      icon: "🔓",
+      issuer: "Kalp Studio",
+      date: "2025",
+      link: "#"
+    },
+
+    // Programming & DSA (5)
+    { 
+      name: "Java Quiz", 
+      category: "Programming", 
+      icon: "☕",
+      issuer: "Elite Coders",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "Code Blaze 2.0", 
+      category: "Programming", 
+      icon: "🔥",
+      issuer: "Lloyd Institute of Engineering and Technology",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "Certificate of Participation (QUIZ-A-THAN)", 
+      category: "Programming", 
+      icon: "🧩",
+      issuer: "Vieco Information Technology Services",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "TRIE DSA (5 Days Bootcamp)", 
+      category: "Programming", 
+      icon: "🌳",
+      issuer: "DevTown",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "Certificate of Participation in AlgoUtsav 2025", 
+      category: "Programming", 
+      icon: "🧮",
+      issuer: "Unstop",
+      date: "Mar 2025",
+      link: "#"
+    },
+
+    // Events & Workshops (8)
+    { 
+      name: "TRIE DSA (Project Completion - 2)", 
+      category: "Events", 
+      icon: "🚀",
+      issuer: "Google Developer Groups, VIT-AP",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "TRIE DSA (Project Completion - 1)", 
+      category: "Events", 
+      icon: "🚀",
+      issuer: "Microsoft Student Chapter- MST",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "Project Completion (DevTown - Google)", 
+      category: "Events", 
+      icon: "🎓",
+      issuer: "Google Developer Groups, VIT-AP",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "Project Completion (DevTown - Microsoft)", 
+      category: "Events", 
+      icon: "🎓",
+      issuer: "Microsoft Student Chapter- MST",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "Event Participation (TechVerse Community)", 
+      category: "Events", 
+      icon: "🎪",
+      issuer: "TechVerseCommunity",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "Indian Independence Day Quiz 2025", 
+      category: "Events", 
+      icon: "🇮🇳",
+      issuer: "Ministry of Social Justice & Empowerment",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "UI/UX in Big Brands (Next Bench Talks)", 
+      category: "Events", 
+      icon: "🎨",
+      issuer: "Next Bench",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "Webinar attended (AI Voice Assistant)", 
+      category: "Events", 
+      icon: "🎤",
+      issuer: "SkillEcced",
+      date: "2025",
+      link: "#"
+    },
+    { 
+      name: "Unstop Certificate", 
+      category: "Events", 
+      icon: "🏅",
+      issuer: "Unstop",
+      date: "2025",
+      link: "#"
+    }
   ]
 
   const containerVariants = {
@@ -168,7 +345,7 @@ const Education = () => {
           <motion.div variants={itemVariants}>
             <h3 className="text-xl sm:text-2xl font-bold text-text-primary text-center mb-6 md:mb-8 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3">
               <Award className="text-text-accent w-6 h-6 sm:w-7 sm:h-7" />
-              <span>45+ Professional Certifications</span>
+              <span>24 Professional Certifications</span>
             </h3>
 
             {/* Certification Stats */}
@@ -205,133 +382,148 @@ const Education = () => {
               <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
                 <Book className="text-text-accent w-5 h-5 sm:w-6 sm:h-6" size={24} />
                 <h4 className="text-lg sm:text-xl font-semibold text-text-primary">
-                  Certification Topics & Skills
+                  All Certifications
                 </h4>
               </div>
               
               {/* Category-wise certifications */}
               <div className="space-y-6">
-                {/* Programming Languages */}
+                {/* Microsoft & Cloud */}
+                <div>
+                  <h5 className="text-sm font-semibold text-text-accent mb-3 flex items-center gap-2">
+                    <span className="text-lg">☁️</span>
+                    Microsoft & Cloud Computing (4)
+                  </h5>
+                  <div className="space-y-2">
+                    {allCertificates
+                      .filter(cert => cert.category === "Microsoft")
+                      .map((cert, index) => (
+                        <motion.a
+                          key={cert.name}
+                          href={cert.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                          whileHover={{ scale: 1.02, x: 5 }}
+                          className="flex items-start gap-3 p-3 sm:p-4 bg-background-secondary border border-text-accent/30 rounded-lg hover:border-text-accent transition-all duration-300 cursor-pointer group"
+                        >
+                          <span className="text-2xl flex-shrink-0">{cert.icon}</span>
+                          <div className="flex-1 min-w-0">
+                            <h6 className="text-sm sm:text-base font-semibold text-text-primary group-hover:text-text-accent transition-colors duration-300">
+                              {cert.name}
+                            </h6>
+                            <p className="text-xs sm:text-sm text-text-secondary mt-1">
+                              {cert.issuer} • {cert.date}
+                            </p>
+                          </div>
+                        </motion.a>
+                      ))}
+                  </div>
+                </div>
+
+                {/* Web Development */}
+                <div>
+                  <h5 className="text-sm font-semibold text-text-accent mb-3 flex items-center gap-2">
+                    <span className="text-lg">�</span>
+                    Web Development & Frontend (7)
+                  </h5>
+                  <div className="space-y-2">
+                    {allCertificates
+                      .filter(cert => cert.category === "Web Dev")
+                      .map((cert, index) => (
+                        <motion.a
+                          key={cert.name}
+                          href={cert.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                          whileHover={{ scale: 1.02, x: 5 }}
+                          className="flex items-start gap-3 p-3 sm:p-4 bg-background-secondary border border-text-accent/30 rounded-lg hover:border-text-accent transition-all duration-300 cursor-pointer group"
+                        >
+                          <span className="text-2xl flex-shrink-0">{cert.icon}</span>
+                          <div className="flex-1 min-w-0">
+                            <h6 className="text-sm sm:text-base font-semibold text-text-primary group-hover:text-text-accent transition-colors duration-300">
+                              {cert.name}
+                            </h6>
+                            <p className="text-xs sm:text-sm text-text-secondary mt-1">
+                              {cert.issuer} • {cert.date}
+                            </p>
+                          </div>
+                        </motion.a>
+                      ))}
+                  </div>
+                </div>
+
+                {/* Programming & DSA */}
                 <div>
                   <h5 className="text-sm font-semibold text-text-accent mb-3 flex items-center gap-2">
                     <span className="text-lg">💻</span>
-                    Programming Languages
+                    Programming & Data Structures (5)
                   </h5>
-                  <div className="flex flex-wrap gap-2 sm:gap-3">
-                    {certificationTopics
-                      .filter(topic => topic.category === "Programming")
-                      .map((topic, index) => (
-                        <motion.span
-                          key={topic.name}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1 }}
+                  <div className="space-y-2">
+                    {allCertificates
+                      .filter(cert => cert.category === "Programming")
+                      .map((cert, index) => (
+                        <motion.a
+                          key={cert.name}
+                          href={cert.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.5, delay: index * 0.1 }}
-                          whileHover={{ scale: 1.05, y: -2 }}
-                          className="px-3 sm:px-4 py-1.5 sm:py-2 bg-background-secondary border border-text-accent/30 rounded-lg text-xs sm:text-sm text-text-secondary hover:text-text-accent hover:border-text-accent transition-all duration-300 cursor-pointer flex items-center gap-2"
+                          whileHover={{ scale: 1.02, x: 5 }}
+                          className="flex items-start gap-3 p-3 sm:p-4 bg-background-secondary border border-text-accent/30 rounded-lg hover:border-text-accent transition-all duration-300 cursor-pointer group"
                         >
-                          <span>{topic.icon}</span>
-                          {topic.name}
-                        </motion.span>
+                          <span className="text-2xl flex-shrink-0">{cert.icon}</span>
+                          <div className="flex-1 min-w-0">
+                            <h6 className="text-sm sm:text-base font-semibold text-text-primary group-hover:text-text-accent transition-colors duration-300">
+                              {cert.name}
+                            </h6>
+                            <p className="text-xs sm:text-sm text-text-secondary mt-1">
+                              {cert.issuer} • {cert.date}
+                            </p>
+                          </div>
+                        </motion.a>
                       ))}
                   </div>
                 </div>
 
-                {/* Frontend Development */}
+                {/* Events & Workshops */}
                 <div>
                   <h5 className="text-sm font-semibold text-text-accent mb-3 flex items-center gap-2">
-                    <span className="text-lg">🎨</span>
-                    Frontend Development
+                    <span className="text-lg">🎯</span>
+                    Events, Workshops & Competitions (8)
                   </h5>
-                  <div className="flex flex-wrap gap-2 sm:gap-3">
-                    {certificationTopics
-                      .filter(topic => topic.category === "Frontend")
-                      .map((topic, index) => (
-                        <motion.span
-                          key={topic.name}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1 }}
+                  <div className="space-y-2">
+                    {allCertificates
+                      .filter(cert => cert.category === "Events")
+                      .map((cert, index) => (
+                        <motion.a
+                          key={cert.name}
+                          href={cert.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
                           transition={{ duration: 0.5, delay: index * 0.1 }}
-                          whileHover={{ scale: 1.05, y: -2 }}
-                          className="px-3 sm:px-4 py-1.5 sm:py-2 bg-background-secondary border border-text-accent/30 rounded-lg text-xs sm:text-sm text-text-secondary hover:text-text-accent hover:border-text-accent transition-all duration-300 cursor-pointer flex items-center gap-2"
+                          whileHover={{ scale: 1.02, x: 5 }}
+                          className="flex items-start gap-3 p-3 sm:p-4 bg-background-secondary border border-text-accent/30 rounded-lg hover:border-text-accent transition-all duration-300 cursor-pointer group"
                         >
-                          <span>{topic.icon}</span>
-                          {topic.name}
-                        </motion.span>
-                      ))}
-                  </div>
-                </div>
-
-                {/* Backend Development */}
-                <div>
-                  <h5 className="text-sm font-semibold text-text-accent mb-3 flex items-center gap-2">
-                    <span className="text-lg">🗄️</span>
-                    Backend & Databases
-                  </h5>
-                  <div className="flex flex-wrap gap-2 sm:gap-3">
-                    {certificationTopics
-                      .filter(topic => topic.category === "Backend")
-                      .map((topic, index) => (
-                        <motion.span
-                          key={topic.name}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
-                          whileHover={{ scale: 1.05, y: -2 }}
-                          className="px-3 sm:px-4 py-1.5 sm:py-2 bg-background-secondary border border-text-accent/30 rounded-lg text-xs sm:text-sm text-text-secondary hover:text-text-accent hover:border-text-accent transition-all duration-300 cursor-pointer flex items-center gap-2"
-                        >
-                          <span>{topic.icon}</span>
-                          {topic.name}
-                        </motion.span>
-                      ))}
-                  </div>
-                </div>
-
-                {/* DSA */}
-                <div>
-                  <h5 className="text-sm font-semibold text-text-accent mb-3 flex items-center gap-2">
-                    <span className="text-lg">🧮</span>
-                    Data Structures & Algorithms
-                  </h5>
-                  <div className="flex flex-wrap gap-2 sm:gap-3">
-                    {certificationTopics
-                      .filter(topic => topic.category === "DSA")
-                      .map((topic, index) => (
-                        <motion.span
-                          key={topic.name}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
-                          whileHover={{ scale: 1.05, y: -2 }}
-                          className="px-3 sm:px-4 py-1.5 sm:py-2 bg-background-secondary border border-text-accent/30 rounded-lg text-xs sm:text-sm text-text-secondary hover:text-text-accent hover:border-text-accent transition-all duration-300 cursor-pointer flex items-center gap-2"
-                        >
-                          <span>{topic.icon}</span>
-                          {topic.name}
-                        </motion.span>
-                      ))}
-                  </div>
-                </div>
-
-                {/* Tools & Technologies */}
-                <div>
-                  <h5 className="text-sm font-semibold text-text-accent mb-3 flex items-center gap-2">
-                    <span className="text-lg">🛠️</span>
-                    Tools & Technologies
-                  </h5>
-                  <div className="flex flex-wrap gap-2 sm:gap-3">
-                    {certificationTopics
-                      .filter(topic => topic.category === "Tools")
-                      .map((topic, index) => (
-                        <motion.span
-                          key={topic.name}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
-                          whileHover={{ scale: 1.05, y: -2 }}
-                          className="px-3 sm:px-4 py-1.5 sm:py-2 bg-background-secondary border border-text-accent/30 rounded-lg text-xs sm:text-sm text-text-secondary hover:text-text-accent hover:border-text-accent transition-all duration-300 cursor-pointer flex items-center gap-2"
-                        >
-                          <span>{topic.icon}</span>
-                          {topic.name}
-                        </motion.span>
+                          <span className="text-2xl flex-shrink-0">{cert.icon}</span>
+                          <div className="flex-1 min-w-0">
+                            <h6 className="text-sm sm:text-base font-semibold text-text-primary group-hover:text-text-accent transition-colors duration-300">
+                              {cert.name}
+                            </h6>
+                            <p className="text-xs sm:text-sm text-text-secondary mt-1">
+                              {cert.issuer} • {cert.date}
+                            </p>
+                          </div>
+                        </motion.a>
                       ))}
                   </div>
                 </div>
