@@ -162,12 +162,18 @@ const Hero = () => {
             {stats.map((stat, index) => (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="text-center p-2 sm:p-4 bg-background-secondary/50 backdrop-blur-sm rounded-lg border border-text-accent/10"
+                whileHover={{ scale: 1.1, y: -5 }}
+                className="text-center p-2 sm:p-4 bg-background-secondary/50 backdrop-blur-sm rounded-lg border border-background-tertiary hover:border-text-accent transition-all duration-300 hover:shadow-glow cursor-pointer group"
               >
-                <div className="text-xl sm:text-2xl mb-1">{stat.icon}</div>
+                <motion.div 
+                  className="text-xl sm:text-2xl mb-1"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {stat.icon}
+                </motion.div>
                 <div className="text-base sm:text-xl font-bold text-text-accent">{stat.number}</div>
-                <div className="text-xs sm:text-sm text-text-secondary">{stat.label}</div>
+                <div className="text-xs sm:text-sm text-text-secondary group-hover:text-text-accent transition-colors duration-300">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
